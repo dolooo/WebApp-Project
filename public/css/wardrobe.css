@@ -1,0 +1,24 @@
+.warderobe{
+    background: #4f4f4f;
+    width: 100%;
+    height: 30%;
+}
+.container3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height:70%;
+}
+.stylizations{
+    background: #4f4f4f;
+    width: 50%;
+    margin-right: 1em;
+}
+.suitcases{
+    background: #4f4f4f;
+    width: 50%;
+}
+@media only screen and (max-device-width: 420px) {
+
+}
