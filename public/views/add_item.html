@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/add_item.css">
-    <link rel="stylesheet" type="text/css" href="../css/main_menu.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/add_item.css">
+    <link rel="stylesheet" type="text/css" href="public/css/main_menu.css">
     <meta charset="utf-8">
     <title>Dodaj nową rzecz</title>
 </head>
@@ -12,8 +12,8 @@
         <div class="logo">
             <img class="logo">
         </div>
-        <p>Strona Główna</p>
-        <p>Szafa</p>
+        <a href="home.html"> <p>Strona Główna</p></a>
+        <a href="wardrobe.html"><p>Szafa</p></a>
         <p>Zakupy</p>
         <p>Społeczność</p>
         <p>Ustawienia</p>
@@ -42,10 +42,22 @@
         </div>
         <div class="content">
             <div class="add">
-                <button>Dodaj nową rzecz</button>
-                <button>Szybkie dodawanie</button>
+
             </div>
             <div class="container3">
+                <form class="add-item">
+                    <input class="text-input" type="text" name="kategoria" placeholder="Kategoria">
+                    <input type="color" name="kolor" placeholder="kolor">
+                    <input class="text-input" type="text" name="marka" placeholder="Marka">
+                    <input class="text-input" type="text" name="rozmiar" placeholder="Rozmiar">
+                    <input class="text-input" type="text" name="tagi" placeholder="Tagi">
+                    <input type="image" name="zdjecia" placeholder="Zdjecia">
+                    <input class="text-input" type="text" name="notatki" placeholder="Notatki">
+                    <h1>Ustal do czego pasuje nowa rzecz:</h1>
+                    <input type="checkbox" name="universal">
+                    <input type="submit" name="add" placeholder="Dodaj nową rzecz">
+                </form>
+                <button>Dodaj kolejną rzecz</button>
 
 
             </div>

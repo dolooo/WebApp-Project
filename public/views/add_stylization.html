@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="public/css/home.css">
+    <link rel="stylesheet" type="text/css" href="public/css/add_item.css">
     <link rel="stylesheet" type="text/css" href="public/css/main_menu.css">
     <meta charset="utf-8">
-    <title>Strona główna</title>
+    <title>Dodaj nową rzecz</title>
 </head>
 <body>
 <div class="container">
@@ -12,8 +12,8 @@
         <div class="logo">
             <img class="logo">
         </div>
-        <p>Strona Główna</p>
-        <p>Szafa</p>
+        <a href="home.html"> <p>Strona Główna</p></a>
+        <a href="wardrobe.html"><p>Szafa</p></a>
         <p>Zakupy</p>
         <p>Społeczność</p>
         <p>Ustawienia</p>
@@ -41,17 +41,24 @@
             </div>
         </div>
         <div class="content">
-            <div class="recently-added">
-                <p>Ostatnio dodane</p>
+            <div class="add">
+
             </div>
-            <div class="recommendations">
-                <p>Polecane dla ciebie</p>
-            </div>
-            <div class="loyalty-cards">
-                <p>Karty lojalnościowe</p>
-            </div>
-            <div class="favourite-shops">
-                <p>Ulubione sklepy i marki</p>
+            <div class="container3">
+                <form class="add-stylization">
+                    <input class="text-input" type="text" name="kategoria" placeholder="Kategoria">
+                    <input type="checkbox">
+                    <input class="text-input" type="text" name="marka" placeholder="Marka">
+                    <input class="text-input" type="text" name="rozmiar" placeholder="Rozmiar">
+                    <input class="text-input" type="text" name="tagi" placeholder="Tagi">
+                    <input type="image" name="zdjecia" placeholder="Zdjecia">
+                    <input class="text-input" type="text" name="notatki" placeholder="Notatki">
+                    <h1>Ustal do czego pasuje nowa rzecz:</h1>
+                    <input type="checkbox" name="universal">
+                    <input type="submit" name="add" placeholder="Dodaj nową rzecz">
+                </form>
+                <button>Dodaj kolejną stylizację</button>
+
             </div>
         </div>
     </div>
