@@ -13,7 +13,7 @@ Routing::get('community', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 Routing::get('store', 'DefaultController');
 Routing::get('wardrobe', 'DefaultController');
-//Routing::post('register', 'SecurityController');
+Routing::get('register', 'SecurityController');
 Routing::post('login', 'SecurityController');
 
 Routing::run($path);

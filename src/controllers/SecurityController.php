@@ -25,4 +25,23 @@ class SecurityController extends AppController
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/home");
     }
+
+    public function register()
+    {
+        if (!$this->isPost()) {
+            return $this->render('register');
+        }
+
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        if ($user->getEmail() !== $email) {
+            return $this->render('login', ['messages' => ['Użytkownik o podanym emailu nie istnieje']]);
+        }
+        if ($user->getPassword() !== $password) {
+            return $this->render('login', ['messages' => ['Nieprawidłowe hasło']]);
+        }
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/home");
+    }
 }

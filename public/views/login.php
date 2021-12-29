@@ -21,10 +21,11 @@
     </div>
     <div class="login-container">
         <form class="login" action="login" method="post">
-            <input name="email" type="text" placeholder="email@email.com">
-            <input name="password" type="password" placeholder="hasło">
+            <div class="login1">
+                <input name="email" type="text" placeholder="email / login">
+                <input name="password" type="password" placeholder="hasło">
+            </div>
             <button type="submit">Zaloguj się</button>
-
         </form>
         <div class="messages">
             <?php if (isset($messages)) {
@@ -34,8 +35,11 @@
             }
             ?>
         </div>
-        <p>Nie masz konta?</p>
-        <button>Zarejestruj się</button>
+        <div class="login2">
+            <p>Nie masz konta?</p>
+            <a href="register"><button>Zarejestruj się</button></a>
+        </div>
+
     </div>
 </div>
 </body>
