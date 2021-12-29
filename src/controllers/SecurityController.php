@@ -17,10 +17,10 @@ class SecurityController extends AppController
         $password = $_POST['password'];
 
         if ($user->getEmail() !== $email) {
-            return $this->render('login', ['messages' => ['User with this email not exists']]);
+            return $this->render('login', ['messages' => ['Użytkownik o podanym emailu nie istnieje']]);
         }
         if ($user->getPassword() !== $password) {
-            return $this->render('login', ['messages' => ['Incorrect password']]);
+            return $this->render('login', ['messages' => ['Nieprawidłowe hasło']]);
         }
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/home");

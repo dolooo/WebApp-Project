@@ -1,27 +1,31 @@
 <!DOCTYPE html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/home.css">
     <link rel="stylesheet" type="text/css" href="public/css/main_menu.css">
+    <script src="https://kit.fontawesome.com/fe5f9ac612.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>Strona główna</title>
 </head>
+
 <body>
+
 <div class="container">
-    <div class="navigation">
+    <div class="navigation1">
         <div class="logo">
-            <img class="logo">
+            <img src="public/img/logo2.svg">
         </div>
-        <a href="home"> <p>Strona Główna</p></a>
-        <a href="wardrobe"><p>Szafa</p></a>
-        <a href="store"><p>Zakupy</p></a>
-        <a href="community"><p>Społeczność</p></a>
-        <a href="settings"><p>Ustawienia</p></a>
-        <div class="icons">
-            <img class="search">
-            <img class="notifications">
-            <img class="account">
-        </div>
+    </div>
+    <div class="navigation2">
+        <a href="home">Strona Główna</a>
+        <a href="wardrobe">Szafa</a>
+        <a href="store">Zakupy</a>
+        <a href="community">Społeczność</a>
+        <a href="settings">Ustawienia</a>
+        <i class="fas fa-search"></i>
+        <i class="far fa-bell"></i>
+        <i class="far fa-user-circle"></i>
         </div>
     <div class="container2">
         <div class="quick-access">

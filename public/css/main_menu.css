@@ -2,27 +2,46 @@ body {
     text-align: center;
     margin:0;
 }
-
 a {
     text-decoration: none;
     display: inline-block;
     line-height: 2em;
 }
+.logo {
+    height: 10%;
+}
 
 .container{
-    width: 100vw;
+    height: 100vh;
     background: black;
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
     flex-direction: column;
 }
 
-.navigation{
-    background: #000000;
+.navigation1{
+    background: black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    height: 2.5em;
+    height: 10%;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+.navigation2{
+    background: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 10%;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+.icons {
+    justify-content: end;
 }
 
 .container2{

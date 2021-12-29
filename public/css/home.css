@@ -1,9 +1,12 @@
-.recently-added, .recommendations, .loyalty-cards, .favourite-shops{
+.recommendations, .loyalty-cards, .favourite-shops{
     background: #585858;
     width: 100%;
     height: 20%;
 }
 .recently-added {
+    background: #585858;
+    width: 100%;
+    height: 20%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
