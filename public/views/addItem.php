@@ -12,11 +12,11 @@
         <div class="logo">
             <img class="logo">
         </div>
-        <a href="home.html"> <p>Strona Główna</p></a>
-        <a href="wardrobe.html"><p>Szafa</p></a>
-        <p>Zakupy</p>
-        <p>Społeczność</p>
-        <p>Ustawienia</p>
+        <a href="home"> <p>Strona Główna</p></a>
+        <a href="wardrobe"><p>Szafa</p></a>
+        <a href="store"><p>Zakupy</p></a>
+        <a href="community"><p>Społeczność</p></a>
+        <a href="settings"><p>Ustawienia</p></a>
         <div class="icons">
             <img class="search">
             <img class="notifications">
@@ -29,7 +29,7 @@
                 <p>Schowek</p>
             </div>
             <div class="quick-add">
-                <button>+Dodaj nową rzecz</button>
+                <a href="addItem"><button>+Dodaj nową rzecz</button></a>
                 <button>+Stwórz walizkę</button>
                 <button>+Stwórz stylizację</button>
             </div>
@@ -45,17 +45,22 @@
 
             </div>
             <div class="container3">
-                <form class="add-item">
-                    <input class="text-input" type="text" name="kategoria" placeholder="Kategoria">
+                <form class="add-item" action="addItem" method="post" enctype="multipart/form-data">
+                    <?php if (isset($messages)) {
+                        foreach ($messages as $message) {
+                            echo $message;
+                        }
+                    }
+                    ?>
+                    <input type="text" name="kategoria" placeholder="Kategoria">
                     <input type="color" name="kolor" placeholder="kolor">
-                    <input class="text-input" type="text" name="marka" placeholder="Marka">
-                    <input class="text-input" type="text" name="rozmiar" placeholder="Rozmiar">
-                    <input class="text-input" type="text" name="tagi" placeholder="Tagi">
-                    <input type="image" name="zdjecia" placeholder="Zdjecia">
-                    <input class="text-input" type="text" name="notatki" placeholder="Notatki">
-                    <h1>Ustal do czego pasuje nowa rzecz:</h1>
-                    <input type="checkbox" name="universal">
-                    <input type="submit" name="add" placeholder="Dodaj nową rzecz">
+                    <input type="text" name="marka" placeholder="Marka">
+                    <input type="text" name="rozmiar" placeholder="Rozmiar">
+                    <input type="text" name="tagi" placeholder="Tagi">
+                    <h4>Zdjęcia:</h4>
+                    <input type="file" name="zdjecie" placeholder="Zdjecie">
+                    <textarea rows="5" type="text" name="opis" placeholder="Opis"></textarea>
+                    <input type="submit" name="add" placeholder="Prześlij">
                 </form>
                 <button>Dodaj kolejną rzecz</button>
 

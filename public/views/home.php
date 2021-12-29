@@ -12,11 +12,11 @@
         <div class="logo">
             <img class="logo">
         </div>
-        <p>Strona Główna</p>
-        <p>Szafa</p>
-        <p>Zakupy</p>
-        <p>Społeczność</p>
-        <p>Ustawienia</p>
+        <a href="home"> <p>Strona Główna</p></a>
+        <a href="wardrobe"><p>Szafa</p></a>
+        <a href="store"><p>Zakupy</p></a>
+        <a href="community"><p>Społeczność</p></a>
+        <a href="settings"><p>Ustawienia</p></a>
         <div class="icons">
             <img class="search">
             <img class="notifications">
@@ -29,7 +29,7 @@
                 <p>Schowek</p>
             </div>
             <div class="quick-add">
-                <button>+Dodaj nową rzecz</button>
+                <a href="addItem"><button>+Dodaj nową rzecz</button></a>
                 <button>+Stwórz walizkę</button>
                 <button>+Stwórz stylizację</button>
             </div>
@@ -43,6 +43,11 @@
         <div class="content">
             <div class="recently-added">
                 <p>Ostatnio dodane</p>
+                <div class="item">
+                    <p>Rzecz 1</p>
+                </div>
+                <p>Rzecz 2</p>
+                <p>Rzecz 3</p>
             </div>
             <div class="recommendations">
                 <p>Polecane dla ciebie</p>

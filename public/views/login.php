@@ -8,9 +8,9 @@
 <body>
 <div class="container">
     <div class="theme">
-<!--        <div class="logo">-->
-<!--            <img src="../img/logo.svg">-->
-<!--        </div>-->
+        <div class="logo">
+            <img src="public/img/logo.svg">
+        </div>
         <div class="title">
             <p>Stwórz swoją wirtualną szafę</p>
         </div>
@@ -19,11 +19,19 @@
         </div>
     </div>
     <div class="login-container">
-        <form class="login">
+        <form class="login" action="login" method="post">
+            <div class="messages">
+                <?php if (isset($messages)) {
+                    foreach ($messages as $message) {
+                        echo $message;
+                    }
+                }
+                ?>
+            </div>
             <input name="email" type="text" placeholder="email@email.com">
             <input name="password" type="password" placeholder="password">
+            <button type="submit">Zaloguj się</button>
         </form>
-        <button>Zaloguj się</button>
         <p>Nie masz konta?</p>
         <button>Zarejestruj się</button>
     </div>
