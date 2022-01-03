@@ -1,6 +1,6 @@
 .recently-added::-webkit-scrollbar {
-    width: 1em;
-    height: 1em;
+    width: 0.8em;
+    height: 0.8em;
 }
 
 .recently-added::-webkit-scrollbar-track {
