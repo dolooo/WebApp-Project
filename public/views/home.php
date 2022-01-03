@@ -12,58 +12,68 @@
 <body>
 
 <div class="container">
-    <div class="navigation1">
-        <div class="logo">
-            <img src="public/img/logo2.svg">
-        </div>
-    </div>
-    <div class="navigation2">
-        <a href="home">Strona Główna</a>
-        <a href="wardrobe">Szafa</a>
-        <a href="store">Zakupy</a>
-        <a href="community">Społeczność</a>
-        <a href="settings">Ustawienia</a>
-        <i class="fas fa-search"></i>
-        <i class="far fa-bell"></i>
-        <i class="far fa-user-circle"></i>
-        </div>
+    <header>
+            <h1><a href="home">Wieszak</a></h1>
+            <div class="searchbar">
+                <input name="email" type="text" placeholder="Czego szukasz?">
+                <i class="fas fa-search"></i>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="home">Start</a></li>
+                    <li><a href="wardrobe">Szafa</a></li>
+                    <li><a href="store">Zakupy</a></li>
+                    <li><a href="community">Społeczność</a></li>
+                    <li><a href="community"><img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a></li>
+<!--                    <li><a href="community"><i class="far fa-bell"></i></a></li>-->
+                </ul>
+            </nav>
+    </header>
     <div class="container2">
         <div class="quick-access">
+            <p>Schowek</p>
             <div class="clipboard">
-                <p>Schowek</p>
+                <p>notatka1</p>
+                <p>notatka2</p>
             </div>
             <div class="quick-add">
                 <a href="addItem"><button>+Dodaj nową rzecz</button></a>
                 <button>+Stwórz walizkę</button>
                 <button>+Stwórz stylizację</button>
-            </div>
-            <div class="calendar">
-                <p>Kalendarz</p>
-            </div>
-            <div class="add-event">
                 <button>+Dodaj wydarzenie</button>
+            </div>
+            <p>Kalendarz</p>
+            <div class="calendar">
+                <p>Wydarzenie 1</p>
+                <p>Wydarzenie 2 - ślub</p>
             </div>
         </div>
         <div class="content">
+            <p>Ostatnio dodane</p>
             <div class="recently-added">
-                <p>Ostatnio dodane</p>
-                <div class="item">
-                    <p>Rzecz 1</p>
-                </div>
-                <p>Rzecz 2</p>
-                <p>Rzecz 3</p>
+                <p id="item">Rzecz 1</p>
+                <p id="item">Rzecz 2</p>
+                <p id="item">Rzecz 3</p>
+                <p id="item">Rzecz 4</p>
+                <p id="item">Rzecz 5</p>
+                <p id="item">Rzecz 6</p>
+                <p id="item">Rzecz 7</p>
+                <p id="item">Rzecz 8</p>
             </div>
-            <div class="recommendations">
-                <p>Polecane dla ciebie</p>
-            </div>
+<!--            <p>Polecane dla ciebie</p>-->
+<!--            <div class="recommendations">-->
+<!--                <p id="item">Rekomendacja 1</p>-->
+<!--            </div>-->
+            <p>Karty lojalnościowe</p>
             <div class="loyalty-cards">
-                <p>Karty lojalnościowe</p>
+                <p id="item">Karta lojalnosciowa Orlen</p>
             </div>
+            <p>Ulubione sklepy i marki</p>
             <div class="favourite-shops">
-                <p>Ulubione sklepy i marki</p>
+                <p id="item">NIKE</p>
             </div>
         </div>
     </div>
-    <div class="footer"></div>
 </div>
+<div class="footer"></div>
 </body>

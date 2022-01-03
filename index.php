@@ -7,7 +7,7 @@ $path = parse_url($path, PHP_URL_PATH);
 
 Routing::get('', 'DefaultController');
 Routing::get('home', 'DefaultController');
-Routing::post('addItem', 'ProjectController');
+Routing::post('addItem', 'ItemController');
 Routing::get('addStylization', 'DefaultController');
 Routing::get('community', 'DefaultController');
 Routing::get('settings', 'DefaultController');

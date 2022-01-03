@@ -3,7 +3,7 @@
 require_once 'AppController.php';
 require_once __DIR__ . '/../models/Item.php';
 
-class ProjectController extends AppController
+class ItemController extends AppController
 {
     const MAX_FILE_SIZE = 1024*1024;
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
