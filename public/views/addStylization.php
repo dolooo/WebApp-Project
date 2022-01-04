@@ -3,42 +3,56 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/add_item.css">
     <link rel="stylesheet" type="text/css" href="public/css/main_menu.css">
+    <script src="https://kit.fontawesome.com/fe5f9ac612.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>Dodaj nową rzecz</title>
 </head>
 <body>
 <div class="container">
-    <div class="navigation">
-        <div class="logo">
-            <img class="logo">
+    <header>
+        <h1><a href="home">Wieszak</a></h1>
+        <div class="searchbar">
+            <input name="email" type="text" placeholder="Czego szukasz?">
+            <i class="fas fa-search"></i>
         </div>
-        <a href="home"> <p>Strona Główna</p></a>
-        <a href="wardrobe"><p>Szafa</p></a>
-        <a href="store"><p>Zakupy</p></a>
-        <a href="community"><p>Społeczność</p></a>
-        <a href="settings"><p>Ustawienia</p></a>
-        <div class="icons">
-            <img class="search">
-            <img class="notifications">
-            <img class="account">
-        </div>
-        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="home">Start</a></li>
+                <li><a href="wardrobe">Szafa</a></li>
+                <li><a href="stylizations">Stylizacje</a></li>
+                <li><a href="suitcases">Walizki</a></li>
+                <li id="last">
+                    <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
+                </li>
+                <!--                        <select name="Ustawienia">-->
+                <!--                            <option>Konto</option>-->
+                <!--                            <option>Powiadomienia</option>-->
+                <!--                            <option>Ustawienia</option>-->
+                <!--                            <option>Wyloguj się</option>-->
+                <!--                        </select>-->
+
+                <!--                    <li><a href="community"><i class="far fa-bell"></i></a></li>-->
+            </ul>
+        </nav>
+    </header>
     <div class="container2">
         <div class="quick-access">
+            <p>Schowek</p>
             <div class="clipboard">
-                <p>Schowek</p>
+                <p>notatka1</p>
+                <p>notatka2</p>
             </div>
             <div class="quick-add">
                 <a href="addItem"><button>+Dodaj nową rzecz</button></a>
                 <button>+Stwórz walizkę</button>
                 <button>+Stwórz stylizację</button>
-            </div>
-            <div class="calendar">
-                <p>Kalendarz</p>
-            </div>
-            <div class="add-event">
                 <button>+Dodaj wydarzenie</button>
             </div>
+            <!--            <p>Kalendarz</p>-->
+            <!--            <div class="calendar">-->
+            <!--                <p>Wydarzenie 1</p>-->
+            <!--                <p>Wydarzenie 2 - ślub</p>-->
+            <!--            </div>-->
         </div>
         <div class="content">
             <div class="add">
@@ -62,6 +76,6 @@
             </div>
         </div>
     </div>
-    <div class="footer"></div>
 </div>
+<div class="footer"></div>
 </body>

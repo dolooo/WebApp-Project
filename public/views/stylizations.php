@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/main_menu.css">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/stylizations.css">
     <script src="https://kit.fontawesome.com/fe5f9ac612.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>Strona główna</title>
@@ -42,7 +43,9 @@
                 <p>notatka2</p>
             </div>
             <div class="quick-add">
-                <a href="addItem"><button>+Dodaj nową rzecz</button></a>
+                <a href="addItem">
+                    <button>+Dodaj nową rzecz</button>
+                </a>
                 <button>+Stwórz walizkę</button>
                 <button>+Stwórz stylizację</button>
                 <button>+Dodaj wydarzenie</button>
@@ -57,6 +60,6 @@
             <p>Ta strona jest w fazie rozwoju :)</p>
         </div>
     </div>
+    <div class="footer"></div>
 </div>
-<div class="footer"></div>
 </body>

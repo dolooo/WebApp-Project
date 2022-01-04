@@ -19,14 +19,14 @@ class DefaultController extends AppController {
     public function addStylization() {
         $this->render('addStylization');
     }
-    public function community() {
-        $this->render('community');
+    public function suitcases() {
+        $this->render('suitcases');
     }
     public function settings() {
         $this->render('settings');
     }
-    public function store() {
-        $this->render('store');
+    public function stylizations() {
+        $this->render('stylizations');
     }
     public function wardrobe() {
         $this->render('wardrobe');

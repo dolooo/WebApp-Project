@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/home.css">
@@ -8,26 +7,33 @@
     <meta charset="utf-8">
     <title>Strona główna</title>
 </head>
-
 <body>
-
 <div class="container">
     <header>
-            <h1><a href="home">Wieszak</a></h1>
-            <div class="searchbar">
-                <input name="email" type="text" placeholder="Czego szukasz?">
-                <i class="fas fa-search"></i>
-            </div>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="home">Start</a></li>
-                    <li><a href="wardrobe">Szafa</a></li>
-                    <li><a href="store">Zakupy</a></li>
-                    <li><a href="community">Społeczność</a></li>
-                    <li><a href="community"><img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a></li>
-<!--                    <li><a href="community"><i class="far fa-bell"></i></a></li>-->
-                </ul>
-            </nav>
+        <h1><a href="home">Wieszak</a></h1>
+        <div class="searchbar">
+            <input name="email" type="text" placeholder="Czego szukasz?">
+            <i class="fas fa-search"></i>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="home">Start</a></li>
+                <li><a href="wardrobe">Szafa</a></li>
+                <li><a href="stylizations">Stylizacje</a></li>
+                <li><a href="suitcases">Walizki</a></li>
+                <li id="last">
+                    <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
+                </li>
+                <!--                        <select name="Ustawienia">-->
+                <!--                            <option>Konto</option>-->
+                <!--                            <option>Powiadomienia</option>-->
+                <!--                            <option>Ustawienia</option>-->
+                <!--                            <option>Wyloguj się</option>-->
+                <!--                        </select>-->
+
+                <!--                    <li><a href="community"><i class="far fa-bell"></i></a></li>-->
+            </ul>
+        </nav>
     </header>
     <div class="container2">
         <div class="quick-access">
@@ -37,16 +43,18 @@
                 <p>notatka2</p>
             </div>
             <div class="quick-add">
-                <a href="addItem"><button>+Dodaj nową rzecz</button></a>
+                <a href="addItem">
+                    <button>+Dodaj nową rzecz</button>
+                </a>
                 <button>+Stwórz walizkę</button>
                 <button>+Stwórz stylizację</button>
                 <button>+Dodaj wydarzenie</button>
             </div>
-            <p>Kalendarz</p>
-            <div class="calendar">
-                <p>Wydarzenie 1</p>
-                <p>Wydarzenie 2 - ślub</p>
-            </div>
+            <!--            <p>Kalendarz</p>-->
+            <!--            <div class="calendar">-->
+            <!--                <p>Wydarzenie 1</p>-->
+            <!--                <p>Wydarzenie 2 - ślub</p>-->
+            <!--            </div>-->
         </div>
         <div class="content">
             <p>Ostatnio dodane</p>
@@ -60,18 +68,19 @@
                 <p id="item">Rzecz 7</p>
                 <p id="item">Rzecz 8</p>
             </div>
-<!--            <p>Polecane dla ciebie</p>-->
-<!--            <div class="recommendations">-->
-<!--                <p id="item">Rekomendacja 1</p>-->
-<!--            </div>-->
-            <p>Karty lojalnościowe</p>
-            <div class="loyalty-cards">
-                <p id="item">Karta lojalnosciowa Orlen</p>
+            <p>Kolekcje</p>
+            <div class="collections">
+                <p id="item">Casual</p>
+                <p id="item">Beach</p>
             </div>
-            <p>Ulubione sklepy i marki</p>
-            <div class="favourite-shops">
-                <p id="item">NIKE</p>
+            <p>Wydarzenia</p>
+            <div class="events">
+                <p id="item">Tajlandia 27.01.2022</p>
             </div>
+            <!--            <p>Ulubione sklepy i marki</p>-->
+            <!--            <div class="favourite-shops">-->
+            <!--                <p id="item">NIKE</p>-->
+            <!--            </div>-->
         </div>
     </div>
 </div>
