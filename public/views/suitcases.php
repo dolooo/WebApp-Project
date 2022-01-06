@@ -20,7 +20,7 @@
                 <li><a href="home">Start</a></li>
                 <li><a href="wardrobe">Szafa</a></li>
                 <li><a href="stylizations">Stylizacje</a></li>
-                <li><a href="suitcases">Walizki</a></li>
+                <li id="active"><a href="suitcases">Walizki</a></li>
                 <li id="last">
                     <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
                 </li>
@@ -57,9 +57,15 @@
             <!--            </div>-->
         </div>
         <div class="content">
-            <p>Ta strona jest w fazie rozwoju :)</p>
+            <div class="add-suitcase">
+                <p id="add">+Dodaj walizkę</p>
+            </div>
+            <div class="suitcases">
+                <p id="item">walizka1</p>
+                <p id="item">walizka2</p>
+            </div>
         </div>
     </div>
-    <div class="footer"></div>
 </div>
+<div class="footer"></div>
 </body>

@@ -17,7 +17,7 @@
         </div>
         <nav>
             <ul class="nav-list">
-                <li><a href="home">Start</a></li>
+                <li id="active"><a href="home">Start</a></li>
                 <li><a href="wardrobe">Szafa</a></li>
                 <li><a href="stylizations">Stylizacje</a></li>
                 <li><a href="suitcases">Walizki</a></li>

@@ -1,7 +1,7 @@
 .container {
     width: 100vw;
     height: 100vh;
-    background: black;
+    background: #202124;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -45,9 +45,8 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.68) 0% 0% no-repeat padding-box;
-    box-shadow: 0px 6px 6px rgba(255, 255, 255, 0.29);
-    border-radius: 33px;
+    background: #414141 0% 0% no-repeat padding-box;
+    border-radius: 2em;
     margin: 1em;
     padding: 1em;
 }
@@ -68,11 +67,11 @@ form.login {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 button {
-    Background: transparent linear-gradient(180deg, #00ffeb 0%, rgb(0, 154, 142) 100%) 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
+    Background: #121212;
     border-radius: 19px;
     width: 12em;
     border: none;
@@ -81,9 +80,14 @@ button {
     line-height: 2.5em;
 }
 
+button:hover {
+    background: orange;
+}
+
 input {
-    background-color: transparent;
-    border: 1px solid #1e1e1e;
+    background: white;
+    border: #404040FF solid 1px;
+    border-radius: 0.5em;
     padding: 1em;
     margin: 1em;
     width: 50%;

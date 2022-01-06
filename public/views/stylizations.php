@@ -19,7 +19,7 @@
             <ul class="nav-list">
                 <li><a href="home">Start</a></li>
                 <li><a href="wardrobe">Szafa</a></li>
-                <li><a href="stylizations">Stylizacje</a></li>
+                <li id="active"><a href="stylizations">Stylizacje</a></li>
                 <li><a href="suitcases">Walizki</a></li>
                 <li id="last">
                     <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
@@ -57,7 +57,18 @@
             <!--            </div>-->
         </div>
         <div class="content">
-            <p>Ta strona jest w fazie rozwoju :)</p>
+            <div class="add-stylization">
+                <p id="add">+Dodaj stylizację</p>
+            </div>
+            <div class="stylizations">
+                <p id="item">stylizacja1</p>
+                <p id="item">stylizacja2</p>
+                <p id="item">stylizacja3</p>
+                <p id="item">stylizacja4</p>
+                <p id="item">stylizacja5</p>
+                <p id="item">stylizacja6</p>
+                <p id="item">stylizacja7</p>
+            </div>
         </div>
     </div>
     <div class="footer"></div>

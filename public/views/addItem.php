@@ -55,10 +55,6 @@
             <!--            </div>-->
         </div>
         <div class="content">
-            <div class="add">
-
-            </div>
-            <div class="container3">
                 <form class="add-item" action="addItem" method="post" enctype="multipart/form-data">
                     <?php if (isset($messages)) {
                         foreach ($messages as $message) {
@@ -66,21 +62,17 @@
                         }
                     }
                     ?>
-                    <input type="text" name="kategoria" placeholder="Kategoria">
-                    <input type="color" name="kolor" placeholder="kolor">
+                    <input id="category" type="text" name="kategoria" placeholder="Kategoria">
+                    <input id="file" type="file" multiple name="zdjecie" placeholder="Zdjecie" accept="image/*">
                     <input type="text" name="marka" placeholder="Marka">
                     <input type="text" name="rozmiar" placeholder="Rozmiar">
-                    <input type="text" name="tagi" placeholder="Tagi">
-                    <h4>Zdjęcia:</h4>
-                    <input type="file" name="zdjecie" placeholder="Zdjecie">
+                    <input type="color" name="kolor" placeholder="kolor">
                     <textarea rows="5" type="text" name="opis" placeholder="Opis"></textarea>
                     <input type="submit" name="add" placeholder="Prześlij">
                 </form>
-                <button>Dodaj kolejną rzecz</button>
 
 
             </div>
-        </div>
     </div>
 </div>
 <div class="footer"></div>
