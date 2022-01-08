@@ -24,36 +24,11 @@
                 <li id="last">
                     <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
                 </li>
-                <!--                        <select name="Ustawienia">-->
-                <!--                            <option>Konto</option>-->
-                <!--                            <option>Powiadomienia</option>-->
-                <!--                            <option>Ustawienia</option>-->
-                <!--                            <option>Wyloguj się</option>-->
-                <!--                        </select>-->
-
-                <!--                    <li><a href="community"><i class="far fa-bell"></i></a></li>-->
             </ul>
         </nav>
     </header>
     <div class="container2">
-        <div class="quick-access">
-            <p>Schowek</p>
-            <div class="clipboard">
-                <p>notatka1</p>
-                <p>notatka2</p>
-            </div>
-            <div class="quick-add">
-                <a href="addItem"><button>+Dodaj nową rzecz</button></a>
-                <button>+Stwórz walizkę</button>
-                <button>+Stwórz stylizację</button>
-                <button>+Dodaj wydarzenie</button>
-            </div>
-            <!--            <p>Kalendarz</p>-->
-            <!--            <div class="calendar">-->
-            <!--                <p>Wydarzenie 1</p>-->
-            <!--                <p>Wydarzenie 2 - ślub</p>-->
-            <!--            </div>-->
-        </div>
+        <?php include('clipboard.php') ?>
         <div class="content">
                 <form class="add-item" action="addItem" method="post" enctype="multipart/form-data">
                     <?php if (isset($messages)) {

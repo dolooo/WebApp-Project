@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/settings.css">
     <script src="https://kit.fontawesome.com/fe5f9ac612.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
-    <title>Strona główna</title>
+    <title>Ustawienia</title>
 </head>
 <body>
 <div class="container">
@@ -24,36 +24,11 @@
                 <li id="active">
                     <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
                 </li>
-                <!--                        <select name="Ustawienia">-->
-                <!--                            <option>Konto</option>-->
-                <!--                            <option>Powiadomienia</option>-->
-                <!--                            <option>Ustawienia</option>-->
-                <!--                            <option>Wyloguj się</option>-->
-                <!--                        </select>-->
-
-                <!--                    <li><a href="community"><i class="far fa-bell"></i></a></li>-->
             </ul>
         </nav>
     </header>
     <div class="container2">
-        <div class="quick-access">
-            <p>Schowek</p>
-            <div class="clipboard">
-                <p>notatka1</p>
-                <p>notatka2</p>
-            </div>
-            <div class="quick-add">
-                <a href="addItem"><button>+Dodaj nową rzecz</button></a>
-                <button>+Stwórz walizkę</button>
-                <button>+Stwórz stylizację</button>
-                <button>+Dodaj wydarzenie</button>
-            </div>
-            <!--            <p>Kalendarz</p>-->
-            <!--            <div class="calendar">-->
-            <!--                <p>Wydarzenie 1</p>-->
-            <!--                <p>Wydarzenie 2 - ślub</p>-->
-            <!--            </div>-->
-        </div>
+        <?php include('clipboard.php') ?>
         <div class="content">
             <div class="options-list">
                 <ul class="options">

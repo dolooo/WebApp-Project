@@ -13,7 +13,7 @@ Routing::get('suitcases', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 Routing::get('stylizations', 'DefaultController');
 Routing::get('wardrobe', 'DefaultController');
-Routing::get('register', 'SecurityController');
+Routing::post('register', 'SecurityController');
 Routing::post('login', 'SecurityController');
 
 Routing::run($path);

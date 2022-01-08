@@ -84,6 +84,9 @@ button {
     Margin: 0.5em;
     line-height: 2.5em;
 }
+.messages {
+    color: red;
+}
 
 button:hover {
     background: orange;

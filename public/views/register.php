@@ -20,19 +20,27 @@
         </div>
     </div>
     <div class="register-container">
-        <form class="register">
+        <form class="register" action="register" method="post">
             <div class="register1">
-                <input name="imie" type="text" placeholder="Imie">
-                <input name="nazwisko" type="text" placeholder="Nazwisko">
-                <input name="username" type="text" placeholder="Login">
+                <input name="name" type="text" placeholder="Imie">
+                <input name="surname" type="text" placeholder="Nazwisko">
+                <input name="phone" type="number" placeholder="Nr Telefonu">
             </div>
             <div class="register2">
                 <input name="email" type="text" placeholder="email@email.com">
                 <input name="password" type="password" placeholder="Hasło">
-                <input name="password" type="password" placeholder="Potwierdź hasło">
+                <input name="confirmedPassword" type="password" placeholder="Potwierdź hasło">
             </div>
             <button type="submit">Zarejestruj się</button>
         </form>
+        <div class="messages">
+            <?php if (isset($messages)) {
+                foreach ($messages as $message) {
+                    echo $message;
+                }
+            }
+            ?>
+        </div>
         <div class="register3">
             <p>Masz już konto?</p>
             <a href="login"><button>Zaloguj się</button></a>
