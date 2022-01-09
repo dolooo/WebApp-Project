@@ -38,7 +38,7 @@
                     }
                     ?>
                     <input id="category" type="text" name="kategoria" placeholder="Kategoria">
-                    <input id="file" type="file" multiple name="zdjecie" placeholder="Zdjecie" accept="image/*">
+                    <input id="file" type="file" name="zdjecie" placeholder="Zdjecie" accept="image/*">
                     <input type="text" name="marka" placeholder="Marka">
                     <input type="text" name="rozmiar" placeholder="Rozmiar">
                     <input type="color" name="kolor" placeholder="kolor">

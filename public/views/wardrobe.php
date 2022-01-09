@@ -30,36 +30,41 @@
     <div class="container2">
         <?php include('clipboard.php') ?>
         <div class="content">
-                <div class="wardrobes">
-                    <p id="ward">szafa w domu</p>
-                    <p id="ward">szafa w mieszkaniu</p>
-                    <p id="ward">+Dodaj szafę</p>
+            <div class="wardrobes">
+                <p id="ward">szafa w domu</p>
+                <p id="ward">szafa w mieszkaniu</p>
+                <p id="ward">+Dodaj szafę</p>
+            </div>
+            <div class="categories">
+                <p id="cat">Wszystko</p>
+                <p id="cat">Swetry i kardigany</p>
+                <p id="cat">Kurtki i płaszcze</p>
+                <p id="cat">Koszule</p>
+                <p id="cat">Spodnie</p>
+                <p id="cat">Bluzy</p>
+                <p id="cat">Koszulki</p>
+                <p id="cat">Dodatki</p>
+                <p id="cat">Obuwie</p>
+                <p id="cat">Dżinsy</p>
+                <p id="cat">Marynarki i garnitury</p>
+                <p id="cat">Szorty</p>
+                <p id="cat">Bielizna</p>
+                <p id="cat">Inne</p>
+            </div>
+            <div class="items">
+                <?php foreach($items as $item):?>
+                <div id="project">
+                    <img src="/public/uploads/<?= $item->getFile(); ?>">
+                    <div>
+                        <div class="details">
+                            <p><?= $item->getBrand(); ?></p>
+                            <p><?= $item->getSize(); ?></p>
+                        </div>
+                        <p><?= $item->getDescription(); ?></p>
+                    </div>
                 </div>
-                <div class="categories">
-                    <p id="cat">Wszystko</p>
-                    <p id="cat">Swetry i kardigany</p>
-                    <p id="cat">Kurtki i płaszcze</p>
-                    <p id="cat">Koszule</p>
-                    <p id="cat">Spodnie</p>
-                    <p id="cat">Bluzy</p>
-                    <p id="cat">Koszulki</p>
-                    <p id="cat">Dodatki</p>
-                    <p id="cat">Obuwie</p>
-                    <p id="cat">Dżinsy</p>
-                    <p id="cat">Marynarki i garnitury</p>
-                    <p id="cat">Szorty</p>
-                    <p id="cat">Bielizna</p>
-                    <p id="cat">Inne</p>
-                </div>
-                <div class="items">
-                    <p id="item">rzecz1</p>
-                    <p id="item">rzecz1</p>
-                    <p id="item">rzecz1</p>
-                    <p id="item">rzecz1</p>
-                    <p id="item">rzecz1</p>
-                    <p id="item">rzecz1</p>
-                    <p id="item">rzecz1</p>
-                </div>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </div>

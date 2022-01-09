@@ -48,8 +48,39 @@
 p {
     margin: 0.25em;
 }
+.items {
+    height: 9em;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 1em;
+    overflow: hidden;
+    margin: 1em;
+}
+.items > div > img {
+    width: 9em;
+    height: 9em;
+    object-fit: cover;
+    border-radius: 1em;
+}
 
-
+.items > div > div {
+    height: 50%;
+    margin: 1em;
+    color: #2699FB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.items > div {
+    background: #121212;
+    border-radius: 1em;
+    width: 9em;
+    height: 9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 #item {
     width: 9em;
     height: 9em;

@@ -28,7 +28,4 @@ class DefaultController extends AppController {
     public function stylizations() {
         $this->render('stylizations');
     }
-    public function wardrobe() {
-        $this->render('wardrobe');
-    }
 }
