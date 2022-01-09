@@ -103,6 +103,9 @@ p {
     flex-direction: row;
     align-items: start;
     justify-content: space-between;
+    width: 100%;
+    height: auto;
+    overflow: auto;
 }
 
 .items > div {

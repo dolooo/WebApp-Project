@@ -52,13 +52,15 @@
                 <p id="cat">Inne</p>
             </div>
             <div class="items">
-                <?php foreach($items as $item):?>
+                <?php foreach(array_reverse($items) as $item):?>
                 <div id="project">
                     <img src="/public/uploads/<?= $item->getFile(); ?>">
                     <div>
                         <div class="details">
                             <p><?= $item->getBrand(); ?></p>
                             <p><?= $item->getSize(); ?></p>
+<!--                            <p>--><?//= $item->getCategory(); ?><!--</p>-->
+
                         </div>
                         <p><?= $item->getDescription(); ?></p>
                     </div>

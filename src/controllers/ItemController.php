@@ -42,7 +42,7 @@ class ItemController extends AppController
                 $_POST['rozmiar'], $_POST['kolor'], $_POST['opis']);
             $this->itemRepository->addItem($item);
 
-            return $this->render('items', [
+            return $this->render('wardrobe', [
                 'messages' => $this->message,
                 'items' => $this->itemRepository->getItems()
             ]);

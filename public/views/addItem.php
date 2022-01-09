@@ -37,7 +37,24 @@
                         }
                     }
                     ?>
-                    <input id="category" type="text" name="kategoria" placeholder="Kategoria">
+                    <input list="categories" id="category" type="text" name="kategoria" placeholder="Kategoria">
+                    <datalist id="categories">
+                        <option value="">Wybierz kategorię</option>
+                        <option value="Swetry i kardigany"></option>
+                        <option value="Kurtki i płaszcze"></option>
+                        <option>Koszule</option>
+                        <option>Spodnie</option>
+                        <option>Bluzy</option>
+                        <option>Koszulki</option>
+                        <option>Dodatki</option>
+                        <option>Obuwie</option>
+                        <option>Dżinsy</option>
+                        <option>Marynarki i garnitury</option>
+                        <option>Szorty</option>
+                        <option>Bielizna</option>
+                        <option>Inne</option>
+                    </datalist>
+<!--                    <input id="category" type="text" name="kategoria" placeholder="Kategoria">-->
                     <input id="file" type="file" name="zdjecie" placeholder="Zdjecie" accept="image/*">
                     <input type="text" name="marka" placeholder="Marka">
                     <input type="text" name="rozmiar" placeholder="Rozmiar">
