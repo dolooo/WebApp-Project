@@ -11,10 +11,6 @@
 <div class="container">
     <header>
         <h1><a href="home">Wieszak</a></h1>
-        <div class="searchbar">
-            <input name="email" type="text" placeholder="Czego szukasz?">
-            <i class="fas fa-search"></i>
-        </div>
         <nav>
             <ul class="nav-list">
                 <li><a href="home">Start</a></li>
@@ -31,7 +27,7 @@
         <?php include('clipboard.php') ?>
         <div class="content">
             <div class="add-stylization">
-                <p id="add">+Dodaj stylizację</p>
+                <a href="addStylization"> <p id="add">+Dodaj stylizację</p> </a>
             </div>
             <div class="stylizations">
                 <p id="item">stylizacja1</p>

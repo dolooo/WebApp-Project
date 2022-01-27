@@ -40,6 +40,33 @@
     align-items: center;
 }
 
+.color-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+#color > input {
+    width: 1em;
+    height: 1em;
+    background: black;
+    margin:0.2em 1em 0.2em 0;
+}
+
+#color {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#color-circle {
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    margin:0.5em 1em 0.5em 0;
+}
+
 #file {
     padding: 1em;
     background: none;

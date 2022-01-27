@@ -3,7 +3,6 @@
 require_once 'AppController.php';
 
 class DefaultController extends AppController {
-
     public function login() {
         $this->render('login');
     }
@@ -17,6 +16,12 @@ class DefaultController extends AppController {
         $this->render('addItem');
     }
     public function addStylization() {
+        $this->render('addStylization');
+    }
+    public function addSuitcase() {
+        $this->render('addStylization');
+    }
+    public function addEvent() {
         $this->render('addStylization');
     }
     public function suitcases() {

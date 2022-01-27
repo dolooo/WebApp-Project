@@ -31,6 +31,16 @@ class ItemController extends AppController
         $this->render('home', ['items' => $items]);
     }
 
+    public function addStylization()
+    {
+        $topItems = $this->itemRepository->getItemsByType("gora");
+        $bottomItems = $this->itemRepository->getItemsByType("dol");
+        $footwear = $this->itemRepository->getItemsByType("obuwie");
+        $accessories = $this->itemRepository->getItemsByType("akcesoria");
+        $this->render('addStylization', ['topItems' => $topItems, 'bottomItems' => $bottomItems,
+            'footwear' => $footwear, 'accessories' => $accessories]);
+    }
+
     public function addItem(){
         if ($this->isPost() && is_uploaded_file($_FILES['zdjecie']['tmp_name']) && $this->validate($_FILES['zdjecie'])) {
             move_uploaded_file(
@@ -61,5 +71,20 @@ class ItemController extends AppController
             return false;
         }
         return true;
+    }
+
+    public function search() {
+
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->itemRepository->getItemsByCategory($decoded['search']));
+        }
     }
 }

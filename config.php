@@ -2,9 +2,9 @@
 
 class config
 {
-    const USERNAME = 'wfnbrswufusplx';
-    const PASSWORD = 'fc6baa8bc4392dd460dedacec16a73006a462054b51fba4753481a049c0862a7';
-    const HOST = 'ec2-52-208-221-89.eu-west-1.compute.amazonaws.com';
-    const DATABASE = 'd5gg0helnqvj8p';
+    const USERNAME = 'pierbiarhhcgze';
+    const PASSWORD = '6f03618aee62f9d62ebec8cf0407fd47f636a5bd4bbd7e5e5d64b5ebee3994fd';
+    const HOST = 'ec2-54-170-212-187.eu-west-1.compute.amazonaws.com';
+    const DATABASE = 'ddm6is5qu4dont';
 
 }
