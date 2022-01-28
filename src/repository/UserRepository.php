@@ -19,6 +19,7 @@ class UserRepository extends Repository
 
         $_SESSION["userId"] = $user['id'];
         $_SESSION["zalogowany"]='1';
+        setcookie("userId", $user['id']."-".$user['surname'], time()+3600*24*100);
 
         return new User(
             $user['email'],

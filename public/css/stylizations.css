@@ -14,6 +14,31 @@ p {
     background: #414141;
     border-radius: 0 0 3em 3em;
 }
+.categories {
+    height: auto;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    overflow: auto;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    align-items: center;
+}
+.categories > p {
+    margin: 0.25em;
+    width: auto;
+    height: auto;
+    padding: 0.5em 2em 0.5em 2em;
+}
+.categories > p:hover {
+    background: #404040;
+    border-radius: 1em;
+}
+#active2 {
+    background: #404040;
+    border-radius: 1em;
+}
 
 .stylizations {
     height: auto;

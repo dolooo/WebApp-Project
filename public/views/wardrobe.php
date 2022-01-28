@@ -3,6 +3,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/wardrobe.css">
     <link rel="stylesheet" type="text/css" href="public/css/main_menu.css">
+    <script type="text/javascript" src="/public/js/search.js" defer></script>
     <script src="https://kit.fontawesome.com/fe5f9ac612.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>Szafa</title>
@@ -11,10 +12,6 @@
 <div class="container">
     <header>
         <h1><a href="home">Wieszak</a></h1>
-        <div class="searchbar">
-            <input name="email" type="text" placeholder="Czego szukasz?">
-            <i class="fas fa-search"></i>
-        </div>
         <nav>
             <ul class="nav-list">
                 <li><a href="home">Start</a></li>
@@ -30,30 +27,34 @@
     <div class="container2">
         <?php include('clipboard.php') ?>
         <div class="content">
-            <div class="wardrobes">
-                <p id="ward">szafa w domu</p>
-                <p id="ward">szafa w mieszkaniu</p>
-                <p id="ward">+Dodaj szafę</p>
+            <div class="searchbar">
+                <input name="searchbar" type="text" placeholder="Czego szukasz?">
+                <i class="fas fa-search"></i>
             </div>
+<!--            <div class="wardrobes">-->
+<!--                <p id="ward">szafa w domu</p>-->
+<!--                <p id="ward">szafa w mieszkaniu</p>-->
+<!--                <p id="ward">+Dodaj szafę</p>-->
+<!--            </div>-->
             <div class="categories">
-                <p id="cat">Wszystko</p>
-                <p id="cat">Swetry i kardigany</p>
-                <p id="cat">Kurtki i płaszcze</p>
-                <p id="cat">Koszule</p>
-                <p id="cat">Spodnie</p>
-                <p id="cat">Bluzy</p>
-                <p id="cat">Koszulki</p>
-                <p id="cat">Dodatki</p>
-                <p id="cat">Obuwie</p>
-                <p id="cat">Dżinsy</p>
-                <p id="cat">Marynarki i garnitury</p>
-                <p id="cat">Szorty</p>
-                <p id="cat">Bielizna</p>
-                <p id="cat">Inne</p>
+                <p id="active2">Wszystko</p>
+                <p>Swetry i kardigany</p>
+                <p>Kurtki i płaszcze</p>
+                <p>Koszule</p>
+                <p>Spodnie</p>
+                <p>Bluzy</p>
+                <p>Koszulki</p>
+                <p>Dodatki</p>
+                <p>Obuwie</p>
+                <p>Dżinsy</p>
+                <p>Marynarki i garnitury</p>
+                <p>Szorty</p>
+                <p>Bielizna</p>
+                <p>Inne</p>
             </div>
             <div class="items">
                 <?php foreach(array_reverse($items) as $item):?>
-                <div id="project">
+                <div id="item">
                     <img src="/public/uploads/<?= $item->getFile(); ?>">
                     <div>
                         <div class="details">
@@ -72,3 +73,18 @@
 </div>
 <div class="footer"></div>
 </body>
+
+<template id="items-template">
+    <div class="items">
+            <div id="item">
+                <img src="">
+                <div>
+                    <div class="details">
+                        <p id="detail1">brand</p>
+                        <p id="detail2">size</p>
+                    </div>
+                    <p id="description">description</p>
+                </div>
+            </div>
+    </div>
+</template>

@@ -26,8 +26,12 @@
     <div class="container2">
         <?php include('clipboard.php') ?>
         <div class="content">
-            <div class="add-stylization">
-                <a href="addStylization"> <p id="add">+Dodaj stylizację</p> </a>
+            <div class="categories">
+                <p id="active2">Wszystko</p>
+                <p>Codzienne</p>
+                <p>Praca</p>
+                <p>Sportowe</p>
+                <p>Wieczorowe</p>
             </div>
             <div class="stylizations">
                 <p id="item">stylizacja1</p>
