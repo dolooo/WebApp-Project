@@ -159,20 +159,41 @@ class ItemRepository extends Repository
         return $result;
     }
 
-    public function getItemsByCategory(string $searchString)
+    public function getItemsBySearchString(string $searchString)
     {
         session_start();
 
         $searchString = '%' . strtolower($searchString) . '%';
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM items WHERE LOWER(category) LIKE :search 
-            OR LOWER(brand) LIKE :search OR LOWER(description) LIKE :search AND id_assigned_by = :id');
+            SELECT * FROM items WHERE (LOWER(category) LIKE :search 
+            OR LOWER(brand) LIKE :search OR LOWER(description) LIKE :search) AND id_assigned_by = :id');
         $stmt->bindParam(':search', $searchString);
         $stmt->bindParam(':id', $_SESSION["userId"], PDO::PARAM_INT);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getItemsByCategory(string $category)
+    {
+        session_start();
+
+        $category = '%' . strtolower($category) . '%';
+        if (is_null($category)) {
+            $stmt = $this->database->connect()->prepare('SELECT * FROM items WHERE id_assigned_by = :id');
+            $stmt->bindParam(':id', $_SESSION["userId"], PDO::PARAM_INT);
+            $stmt->execute();
+            return array_reverse($stmt->fetchAll(PDO::FETCH_ASSOC));
+        } else {
+            $stmt = $this->database->connect()->prepare('
+            SELECT * FROM items WHERE LOWER(category) LIKE :search 
+             AND id_assigned_by = :id');
+            $stmt->bindParam(':search', $category);
+            $stmt->bindParam(':id', $_SESSION["userId"], PDO::PARAM_INT);
+            $stmt->execute();
+
+            return array_reverse($stmt->fetchAll(PDO::FETCH_ASSOC));
+        }
     }
 
 }

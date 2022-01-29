@@ -18,5 +18,6 @@ Routing::get('wardrobe', 'ItemController');
 Routing::post('register', 'SecurityController');
 Routing::post('login', 'SecurityController');
 Routing::post('search', 'ItemController');
+Routing::post('filter', 'ItemController');
 
 Routing::run($path);

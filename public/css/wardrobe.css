@@ -136,6 +136,7 @@ p {
     flex-direction: row;
     justify-content: end;
     align-items: center;
+    margin-top: 0.25em;
 }
 .fa-pencil-alt {
     margin-right: 0.5em;
@@ -160,6 +161,9 @@ p {
     width: 15em;
     display: flex;
     flex-direction: column;
+}
+.categories > p {
+    cursor: pointer;
 }
 
 @media only screen and (max-device-width: 420px) {
