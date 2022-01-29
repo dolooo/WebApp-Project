@@ -59,10 +59,42 @@ p {
     border-radius:1em;
 }
 
-#item {
+#stylization {
     width: 15em;
-    height: 15em;
     background: #121212;
+    margin-bottom: 2em;
+}
+
+.stylizations > div > img {
+    height: 15em;
+    width: 15em;
+    object-fit: cover;
+    border-radius: 1em 1em 0 0;
+}
+
+.stylizations > div > div {
+    height: 50%;
+    margin: 1em;
+    color: #2699FB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#random-stylization {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background: #121212;
+    margin-bottom: 2em;
+}
+#random-stylization > img {
+    height: 15em;
+    width: 15em;
+    object-fit: cover;
+    border-radius: 1em;
+    margin-right: 1em;
 }
 
 @media only screen and (max-device-width: 420px) {

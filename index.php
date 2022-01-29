@@ -13,7 +13,7 @@ Routing::get('addSuitcase', 'DefaultController');
 Routing::get('addEvent', 'DefaultController');
 Routing::get('suitcases', 'DefaultController');
 Routing::get('settings', 'DefaultController');
-Routing::get('stylizations', 'DefaultController');
+Routing::get('stylizations', 'ItemController');
 Routing::get('wardrobe', 'ItemController');
 Routing::post('register', 'SecurityController');
 Routing::post('login', 'SecurityController');

@@ -33,14 +33,30 @@
                 <p>Sportowe</p>
                 <p>Wieczorowe</p>
             </div>
+            <p>Losowa stylizacja:</p>
+            <div id="random-stylization">
+                <img src="/public/uploads/<?=$topItems[random_int(0,sizeof($topItems)-1)]->getFile() ?>">
+                <img src="/public/uploads/<?= $bottomItems[random_int(0,sizeof($bottomItems)-1)]->getFile() ?>">
+                <img src="/public/uploads/<?= $footwear[random_int(0,sizeof($footwear)-1)]->getFile() ?>">
+                <img src="/public/uploads/<?= $accessories[random_int(0,sizeof($accessories)-1)]->getFile() ?>">
+            </div>
             <div class="stylizations">
-                <p id="item">stylizacja1</p>
-                <p id="item">stylizacja2</p>
-                <p id="item">stylizacja3</p>
-                <p id="item">stylizacja4</p>
-                <p id="item">stylizacja5</p>
-                <p id="item">stylizacja6</p>
-                <p id="item">stylizacja7</p>
+                <?php foreach(array_reverse($stylizations) as $stylization):?>
+                <div id="stylization">
+                    <img src="/public/<?php if(is_null($stylization->getUp())) {
+                        echo 'img/top.jpg';
+                    } else echo "uploads/".$stylization->getUp(); ?> ">
+                    <img src="/public/<?php if(is_null($stylization->getBottom())) {
+                        echo 'img/bottom.jpg';
+                    } else echo "uploads/".$stylization->getBottom(); ?> ">
+                    <img src="/public/<?php if(is_null($stylization->getFootwear())) {
+                        echo 'img/footwear.jpg';
+                    } else echo "uploads/".$stylization->getFootwear(); ?> ">
+                    <img src="/public/<?php if(is_null($stylization->getAccessories())) {
+                        echo 'img/accesories.jpg';
+                    } else echo "uploads/".$stylization->getAccessories(); ?> ">
+                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

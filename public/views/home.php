@@ -34,7 +34,7 @@
     <div class="container2">
         <?php include('clipboard.php') ?>
         <div class="content">
-            <p>Ostatnio dodane</p>
+            <p>Ostatnio dodane rzeczy</p>
             <div class="items">
                 <?php foreach (array_reverse($items) as $item):?>
                     <div id="project">
@@ -42,10 +42,27 @@
                     </div>
                 <?php endforeach; ?>
             </div>
-            <p>Kolekcje</p>
+            <p>Ostatnio dodane stylizacje</p>
             <div class="collections">
-                <p id="item">Casual</p>
-                <p id="item">Beach</p>
+                    <?php foreach (array_reverse($stylizations) as $stylization):?>
+                    <div class="stylization">
+                        <div id="stylization">
+                            <img src="/public/<?php if(is_null($stylization->getUp())) {
+                                echo 'img/top.jpg';
+                            } else echo "uploads/".$stylization->getUp(); ?> ">
+                            <img src="/public/<?php if(is_null($stylization->getBottom())) {
+                                echo 'img/bottom.jpg';
+                            } else echo "uploads/".$stylization->getBottom(); ?> ">
+                            <img src="/public/<?php if(is_null($stylization->getFootwear())) {
+                                echo 'img/footwear.jpg';
+                            } else echo "uploads/".$stylization->getFootwear(); ?> ">
+                            <img src="/public/<?php if(is_null($stylization->getAccessories())) {
+                                echo 'img/accesories.jpg';
+                            } else echo "uploads/".$stylization->getAccessories(); ?> ">
+                        </div>
+                        <p><?= $stylization->getCollection(); ?></p>
+                    </div>
+                    <?php endforeach; ?>
             </div>
             <p>Wydarzenia</p>
             <div class="events">

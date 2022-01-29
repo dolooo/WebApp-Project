@@ -25,16 +25,6 @@
     margin-left: 1em;
 }
 
-.collections {
-    border-bottom: #414141 solid 2px;
-    height: auto;
-    width: auto;
-    display: grid;
-    grid-auto-flow: column;
-    overflow: auto;
-    margin-left: 1em;
-}
-
 .events {
     /*border-bottom: #414141 solid 2px;*/
     height: auto;
@@ -87,6 +77,42 @@ p {
     background: #121212;
     margin: 0 1em 0 0;
 }
+
+#stylization {
+    display: grid;
+    grid-template: auto 1fr / auto 1fr;
+    height: 12em;
+    background: #121212;
+    border-radius: 1em;
+}
+.collection {
+    display: flex;
+    flex-direction: row;
+}
+.stylization {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background: #121212;
+    width: 12em;
+    border-radius: 1em;
+    margin-right: 1em;
+}
+.collections {
+    height: auto;
+    width: auto;
+    margin: 1em;
+    display: flex;
+    flex-direction: row;
+}
+.collections > div > div > img {
+    height: 6em;
+    width: 6em;
+    object-fit: cover;
+    border-radius: 1em;
+}
+
 
 @media only screen and (max-device-width: 420px) {
     .recently-added, .collections, .events, .favourite-shops{

@@ -22,7 +22,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    margin: 1em;
+}
+h4 {
+    text-align: start;
+    font-family: Arial, serif;
+    margin: 0.25em;
+}
+.add-stylization input {
+    width: 15%;
+    height: 2em;
+    background: white;
+    text-align: start;
+    font-size: 1em;
+    border: #404040FF solid 1px;
+    border-radius: 0.5em;
+    margin-top: 1em;
+}
+#item > input {
+    width: 10%;
+    margin: 0 0 1em 0;
 }
 .add{
     display: flex;
@@ -44,6 +63,7 @@
 input {
     margin-bottom: 1em;
 }
+
 #item {
     display: flex;
     flex-direction: column;
@@ -52,12 +72,13 @@ input {
 }
 
 .items {
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
+    display: flex;
+    flex-direction: row;
     overflow: auto;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     width: 100%;
+    margin-bottom: 1em;
 }
 .items > #item > img {
     overflow: auto;

@@ -25,10 +25,23 @@ class ItemController extends AppController
         $this->render('wardrobe', ['items' => $items]);
     }
 
+    public function stylizations()
+    {
+        $topItems = $this->itemRepository->getItemsByType("gora");
+        $bottomItems = $this->itemRepository->getItemsByType("dol");
+        $footwear = $this->itemRepository->getItemsByType("obuwie");
+        $accessories = $this->itemRepository->getItemsByType("akcesoria");
+        $stylizations = $this->itemRepository->getStylizations();
+
+        $this->render('stylizations', ['stylizations' => $stylizations , 'topItems' => $topItems,
+            'bottomItems' => $bottomItems, 'footwear' => $footwear, 'accessories' => $accessories]);
+    }
+
     public function home()
     {
         $items = $this->itemRepository->getItems();
-        $this->render('home', ['items' => $items]);
+        $stylizations = $this->itemRepository->getStylizations();
+        $this->render('home', ['items' => $items, 'stylizations' => $stylizations]);
     }
 
     public function addStylization()
@@ -37,6 +50,23 @@ class ItemController extends AppController
         $bottomItems = $this->itemRepository->getItemsByType("dol");
         $footwear = $this->itemRepository->getItemsByType("obuwie");
         $accessories = $this->itemRepository->getItemsByType("akcesoria");
+
+        if ($this->isPost()) {
+
+            $array[0] = $_POST['top'];
+            $array[1] = $_POST['bottom'];
+            $array[2] = $_POST['footwear'];
+            $array[3] = $_POST['accesories'];
+            $array[4] = $_POST['collection'];
+
+            $this->itemRepository->addStylization($array);
+
+            return $this->render('stylizations', [
+                'messages' => $this->message,
+                'stylizations' => $this->itemRepository->getStylizations()
+            ]);
+        }
+
         $this->render('addStylization', ['topItems' => $topItems, 'bottomItems' => $bottomItems,
             'footwear' => $footwear, 'accessories' => $accessories]);
     }
@@ -85,6 +115,21 @@ class ItemController extends AppController
             http_response_code(200);
 
             echo json_encode($this->itemRepository->getItemsByCategory($decoded['search']));
+        }
+    }
+
+    public function delete() {
+
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->itemRepository->deleteItem($decoded['search']));
         }
     }
 }

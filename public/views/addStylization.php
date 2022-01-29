@@ -33,16 +33,24 @@
                     }
                 }
                 ?>
-                <p>Wybierz górną część garderoby:</p>
+                <h4>Wybierz kolekcję do której chcesz przypisać stylizację:</h4>
+                <input list="collections" id="collection" type="text" name="collection" placeholder="Kolekcja">
+                <datalist id="collections">
+                    <option>Codzienne</option>
+                    <option>Praca</option>
+                    <option>Wieczorowe</option>
+                    <option>Vintage</option>
+                </datalist>
+                <h4>Wybierz górną część garderoby:</h4>
                 <label class="items">
                     <?php foreach (array_reverse($topItems) as $item):?>
                     <div id="item">
                         <img src="/public/uploads/<?= $item->getFile(); ?>">
-                        <input type="radio" name="up" value="<?= $item->getFile(); ?>">
+                        <input type="radio" name="top" value="<?= $item->getFile(); ?>">
                     </div>
                     <?php endforeach; ?>
                 </label>
-                <p>Wybierz dolną część garderoby:</p>
+                <h4>Wybierz dolną część garderoby:</h4>
                 <label class="items">
                     <?php foreach (array_reverse($bottomItems) as $item):?>
                     <div id="item">
@@ -51,7 +59,7 @@
                     </div>
                     <?php endforeach; ?>
                 </label>
-                <p>Wybierz obuwie:</p>
+                <h4>Wybierz obuwie:</h4>
                 <label class="items">
                     <?php foreach (array_reverse($footwear) as $item):?>
                     <div id="item">
@@ -60,12 +68,12 @@
                     </div>
                     <?php endforeach; ?>
                 </label>
-                <p>Wybierz dodatki:</p>
+                <h4>Wybierz dodatki:</h4>
                 <label class="items">
                     <?php foreach (array_reverse($accessories) as $item):?>
                     <div id="item">
                             <img src="/public/uploads/<?= $item->getFile(); ?>">
-                        <input type="radio" name="accessories" value="<?= $item->getFile(); ?>">
+                        <input type="radio" name="accesories" value="<?= $item->getFile(); ?>">
                     </div>
                     <?php endforeach; ?>
                 </label>

@@ -1,27 +1,30 @@
 <?php
 
 require_once 'Repository.php';
-require_once __DIR__.'/../models/Item.php';
+require_once __DIR__ . '/../models/Item.php';
+require_once __DIR__ . '/../models/Stylization.php';
 
-class ItemRepository extends Repository {
-    public function getItem(int $id): ?Item {
+class ItemRepository extends Repository
+{
+    public function getItem(int $id): ?Item
+    {
         $statement = $this->database->connect()->prepare('SELECT * FROM items WHERE id = :id ');
-            $statement->bindParam(':id',$id, PDO::PARAM_INT);
-            $statement->execute();
+        $statement->bindParam(':id', $id, PDO::PARAM_INT);
+        $statement->execute();
 
-            $item = $statement->fetch(PDO::FETCH_ASSOC);
+        $item = $statement->fetch(PDO::FETCH_ASSOC);
 
-            if($item == false) {
-                return null;
-            }
-            return new Item(
-                $item['category'],
-                $item['file'],
-                $item['brand'],
-                $item['size'],
-                $item['color'],
-                $item['description']
-            );
+        if ($item == false) {
+            return null;
+        }
+        return new Item(
+            $item['category'],
+            $item['file'],
+            $item['brand'],
+            $item['size'],
+            $item['color'],
+            $item['description']
+        );
     }
 
     public function addItem(Item $item)
@@ -45,20 +48,37 @@ class ItemRepository extends Repository {
         ]);
     }
 
+    public function deleteItem(Item $item)
+    {
+        session_start();
+
+        $statement = $this->database->connect()->prepare('
+            DELETE FROM items WHERE id_assigned_by = ? AND FILE = ?
+        ');
+
+        $statement->execute([
+            $_SESSION["userId"],
+            $item->getFile()
+        ]);
+    }
+
     public function addStylization(array $arr)
     {
         session_start();
-        foreach ($arr as $itemInStylization) {
-            $statement = $this->database->connect()->prepare('
-            INSERT INTO stylizations s (s.id_assigned_by) LEFT JOIN stylizations_items si 
-                (si.id_stylization, si.id_item)
-            VALUES (?, ?, ?)');
+        $statement = $this->database->connect()->prepare('
+            INSERT INTO stylizations (id_assigned_by, up, bottom, footwear, accessories, collection)
+            VALUES (?, ?, ?, ?, ?, ?)');
 
-            $statement->execute([
-                $_SESSION["userId"],
+        $statement->execute([
+            $_SESSION["userId"],
+            $arr[0],
+            $arr[1],
+            $arr[2],
+            $arr[3],
+            $arr[4]
 
-            ]);
-        }
+        ]);
+
     }
 
     public function getItems(): array
@@ -80,6 +100,31 @@ class ItemRepository extends Repository {
                     $item['size'],
                     $item['color'],
                     $item['description']
+                );
+            }
+        }
+
+        return $result;
+    }
+
+    public function getStylizations(): array
+    {
+        session_start();
+
+        $result = [];
+
+        $statement = $this->database->connect()->prepare('SELECT * FROM stylizations');
+        $statement->execute();
+        $stylizations = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($stylizations as $stylization) {
+            if ($stylization['id_assigned_by'] == $_SESSION["userId"]) {
+                $result[] = new Stylization(
+                    $stylization['up'],
+                    $stylization['bottom'],
+                    $stylization['footwear'],
+                    $stylization['accessories'],
+                    $stylization['collection']
                 );
             }
         }

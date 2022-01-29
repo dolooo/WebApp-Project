@@ -35,9 +35,8 @@
                     ?>
                     <input list="categories" id="category" type="text" name="kategoria" placeholder="Kategoria">
                     <datalist id="categories">
-                        <option value="">Wybierz kategorię</option>
-                        <option value="Swetry i kardigany"></option>
-                        <option value="Kurtki i płaszcze"></option>
+                        <option>Swetry i kardigany</option>
+                        <option>Kurtki i płaszcze</option>
                         <option>Koszule</option>
                         <option>Spodnie</option>
                         <option>Bluzy</option>

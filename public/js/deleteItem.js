@@ -1,18 +1,14 @@
-const search = document.querySelector('input[name="searchbar"]');
+const deleteButtons = document.querySelectorAll(".fa-trash-alt");
 const itemContainer = document.querySelector(".items");
 
-search.addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-
-        const data = {search: this.value};
-
-        fetch("/search", {
+function deleteItem($item) {
+    if (confirm('Czy jesteś pewien, że chcesz usunąć tą rzecz?')) {
+        fetch("/delete", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify($item)
         }).then(function (response) {
             return response.json();
         }).then(function (items) {
@@ -20,8 +16,7 @@ search.addEventListener("keyup", function (event) {
             loadItems(items)
         });
     }
-});
-
+}
 function loadItems(items) {
     items.forEach(item => {
         console.log(item);
@@ -43,3 +38,5 @@ function createItem(item) {
 
     itemContainer.appendChild(clone);
 }
+
+deleteButtons.forEach(button => button.addEventListener("click", deleteItem));
