@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/wardrobe.css">
     <link rel="stylesheet" type="text/css" href="public/css/main_menu.css">
     <script type="text/javascript" src="/public/js/search.js" defer></script>
-<!--    <script type="text/javascript" src="/public/js/deleteItem.js" defer></script>-->
+    <script type="text/javascript" src="/public/js/deleteItem.js" defer></script>
     <script type="text/javascript" src="/public/js/filter.js" defer></script>
     <script src="https://kit.fontawesome.com/fe5f9ac612.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
@@ -12,20 +12,7 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <h1><a href="home">Wieszak</a></h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="home">Start</a></li>
-                <li id="active"><a href="wardrobe">Szafa</a></li>
-                <li><a href="stylizations">Stylizacje</a></li>
-                <li><a href="suitcases">Walizki</a></li>
-                <li id="last">
-                    <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <?php include('header.php') ?>
     <div class="container2">
         <?php include('clipboard.php') ?>
         <div class="content">
@@ -57,7 +44,7 @@
             <div class="items">
                 <?php foreach (array_reverse($items) as $item): ?>
                     <div id="item">
-                        <img src="/public/uploads/<?= $item->getFile(); ?>">
+                        <img id="file" src="/public/uploads/<?= $item->getFile(); ?>" title="<?= $item->getFile(); ?>">
                         <div>
                             <div class="information">
                                 <div class="details">
@@ -87,15 +74,15 @@
             <div>
                 <div class="information">
                     <div class="details">
-                        <p id="detail1"><?= $item->getBrand(); ?></p>
-                        <p id="detail2"><?= $item->getSize(); ?></p>
+                        <p id="detail1"></p>
+                        <p id="detail2"></p>
                     </div>
                     <div class="manage">
-                        <i onclick="" class="fas fa-pencil-alt"></i>
+                        <i class="fas fa-pencil-alt"></i>
                         <i class="fas fa-trash-alt"></i>
                     </div>
                 </div>
-                <p id="description"><?= $item->getDescription(); ?></p>
+                <p id="description"></p>
             </div>
         </div>
     </div>

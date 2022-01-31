@@ -33,7 +33,7 @@
     height: auto;
     width: auto;
     display: grid;
-    grid-template-columns: repeat(20,1fr);
+    grid-template-columns: repeat(20, 1fr);
     overflow: auto;
     margin-left: 1em;
     margin-right: 1em;
@@ -47,11 +47,12 @@
     align-items: center;
 
 }
+
 #color > input {
     width: 1em;
     height: 1em;
     background: black;
-    margin:0.2em 1em 0.2em 0;
+    margin: 0.2em 1em 0.2em 0;
 }
 
 #color {
@@ -60,11 +61,12 @@
     justify-content: center;
     align-items: center;
 }
+
 #color-circle {
     width: 2em;
     height: 2em;
     border-radius: 2em;
-    margin:0.5em 1em 0.5em 0;
+    margin: 0.5em 1em 0.5em 0;
 }
 
 #file {
@@ -75,9 +77,10 @@
 }
 
 #description {
-    width:30%;
+    width: 30%;
     height: 5em;
 }
+
 .text-input {
     background-color: transparent;
     border: none;
@@ -86,6 +89,7 @@
     margin: 1em;
     width: 50%;
 }
+
 @media only screen and (max-device-width: 420px) {
 
 }

@@ -9,7 +9,7 @@ function filter(category) {
     }).then(function (response) {
         return response.json();
     }).then(function (items) {
-        itemContainer.innerHTML = "";
+        itemsContainer.innerHTML = "";
         loadItems(items)
     });
 }
@@ -33,5 +33,5 @@ function createItem(item) {
     detail2.innerHTML = item.size;
     description.innerHTML = item.description;
 
-    itemContainer.appendChild(clone);
+    itemsContainer.appendChild(clone);
 }

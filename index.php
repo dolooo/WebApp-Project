@@ -19,5 +19,6 @@ Routing::post('register', 'SecurityController');
 Routing::post('login', 'SecurityController');
 Routing::post('search', 'ItemController');
 Routing::post('filter', 'ItemController');
+Routing::post('delete', 'ItemController');
 
 Routing::run($path);

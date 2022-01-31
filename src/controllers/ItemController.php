@@ -63,7 +63,9 @@ class ItemController extends AppController
 
             return $this->render('stylizations', [
                 'messages' => $this->message,
-                'stylizations' => $this->itemRepository->getStylizations()
+                'stylizations' => $this->itemRepository->getStylizations(),
+                'topItems' => $topItems,
+                'bottomItems' => $bottomItems, 'footwear' => $footwear, 'accessories' => $accessories
             ]);
         }
 
@@ -144,7 +146,7 @@ class ItemController extends AppController
             header('Content-type: application/json');
             http_response_code(200);
 
-            echo json_encode($this->itemRepository->deleteItem($decoded['search']));
+            echo json_encode($this->itemRepository->deleteItem($decoded['item']));
         }
     }
 }

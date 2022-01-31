@@ -48,7 +48,7 @@ class ItemRepository extends Repository
         ]);
     }
 
-    public function deleteItem(Item $item)
+    public function deleteItem(string $file): array
     {
         session_start();
 
@@ -58,8 +58,21 @@ class ItemRepository extends Repository
 
         $statement->execute([
             $_SESSION["userId"],
-            $item->getFile()
+            $file
         ]);
+
+        $statement = $this->database->connect()->prepare('
+            DELETE FROM stylizations WHERE id_assigned_by = ? AND (UP = ? OR BOTTOM = ? OR FOOTWEAR = ? OR ACCESSORIES = ?)
+        ');
+
+        $statement->execute([
+            $_SESSION["userId"],
+            $file,
+            $file,
+            $file,
+            $file
+        ]);
+        return $this->getItems();
     }
 
     public function addStylization(array $arr)
@@ -90,6 +103,7 @@ class ItemRepository extends Repository
         $statement = $this->database->connect()->prepare('SELECT * FROM items');
         $statement->execute();
         $items = $statement->fetchAll(PDO::FETCH_ASSOC);
+        sort($items);
 
         foreach ($items as $item) {
             if ($item['id_assigned_by'] == $_SESSION["userId"]) {
@@ -103,7 +117,6 @@ class ItemRepository extends Repository
                 );
             }
         }
-
         return $result;
     }
 
@@ -116,6 +129,7 @@ class ItemRepository extends Repository
         $statement = $this->database->connect()->prepare('SELECT * FROM stylizations');
         $statement->execute();
         $stylizations = $statement->fetchAll(PDO::FETCH_ASSOC);
+        sort($stylizations);
 
         foreach ($stylizations as $stylization) {
             if ($stylization['id_assigned_by'] == $_SESSION["userId"]) {
@@ -128,7 +142,31 @@ class ItemRepository extends Repository
                 );
             }
         }
+        return $result;
+    }
 
+    public function getStylizationsByCollecton($collection): array
+    {
+        session_start();
+
+        $result = [];
+        $stmt = $this->database->connect()->prepare('SELECT * FROM stylizations WHERE colletion = :collection');
+        $stmt->bindParam(':collection', $collection);
+        $stmt->execute();
+        $stylizations = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        sort($stylizations);
+
+        foreach ($stylizations as $stylization) {
+            if ($stylization['id_assigned_by'] == $_SESSION["userId"]) {
+                $result[] = new Stylization(
+                    $stylization['up'],
+                    $stylization['bottom'],
+                    $stylization['footwear'],
+                    $stylization['accessories'],
+                    $stylization['collection']
+                );
+            }
+        }
         return $result;
     }
 
@@ -142,6 +180,7 @@ class ItemRepository extends Repository
         $stmt->bindParam(':type', $type);
         $stmt->execute();
         $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        sort($items);
 
         foreach ($items as $item) {
             if ($item['id_assigned_by'] == $_SESSION["userId"]) {
@@ -174,7 +213,7 @@ class ItemRepository extends Repository
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function getItemsByCategory(string $category)
+    public function getItemsByCategory(string $category): array
     {
         session_start();
 

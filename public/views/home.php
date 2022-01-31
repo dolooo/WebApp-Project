@@ -9,28 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <h1><a href="home">Wieszak</a></h1>
-        <nav>
-            <ul class="nav-list">
-                <li id="active"><a href="home">Start</a></li>
-                <li><a href="wardrobe">Szafa</a></li>
-                <li><a href="stylizations">Stylizacje</a></li>
-                <li><a href="suitcases">Walizki</a></li>
-                <li id="last">
-                    <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
-                </li>
-                <!--                        <select name="Ustawienia">-->
-                <!--                            <option>Konto</option>-->
-                <!--                            <option>Powiadomienia</option>-->
-                <!--                            <option>Ustawienia</option>-->
-                <!--                            <option>Wyloguj się</option>-->
-                <!--                        </select>-->
-
-                <!--                    <li><a href="community"><i class="far fa-bell"></i></a></li>-->
-            </ul>
-        </nav>
-    </header>
+    <?php include('header.php') ?>
     <div class="container2">
         <?php include('clipboard.php') ?>
         <div class="content">
@@ -44,7 +23,7 @@
             </div>
             <p>Ostatnio dodane stylizacje</p>
             <div class="collections">
-                    <?php foreach (array_reverse($stylizations) as $stylization):?>
+                    <?php foreach (array_reverse($stylizations) as $stylization): ?>
                     <div class="stylization">
                         <div id="stylization">
                             <img src="/public/<?php if(is_null($stylization->getUp())) {
@@ -62,7 +41,7 @@
                         </div>
                         <p><?= $stylization->getCollection(); ?></p>
                     </div>
-                    <?php endforeach; ?>
+                    <?php endforeach;?>
             </div>
             <p>Wydarzenia</p>
             <div class="events">

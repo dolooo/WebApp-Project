@@ -9,20 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <h1><a href="home">Wieszak</a></h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="home">Start</a></li>
-                <li><a href="wardrobe">Szafa</a></li>
-                <li><a href="stylizations">Stylizacje</a></li>
-                <li><a href="suitcases">Walizki</a></li>
-                <li id="active">
-                    <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <?php include('header.php') ?>
     <div class="container2">
         <?php include('clipboard.php') ?>
         <div class="content">
@@ -31,10 +18,10 @@
                     <li><a href="settings" id="clicked">Edytuj profil</a> </li>
                     <li><a href="settings">Ustawienia</a> </li>
 
-                    <li onclick="myFunction()"><p>Wyloguj się
-                            <script>
-                                function myFunction() {
-
+                    <li><p onclick="myFunction()">Wyloguj się</p>
+                        <script>
+                            function myFunction() {
+                                if (confirm('Czy na pewno chcesz się wylogować?')) {
                                     <?php
                                     session_start();
                                     unset($_SESSION["userId"]);
@@ -44,8 +31,9 @@
                                     header("Location: {$url}/login");
                                     ?>
                                 }
-                            </script>
-                        </p></li>
+                            }
+                        </script>
+                    </li>
                 </ul>
             </div>
         </div>

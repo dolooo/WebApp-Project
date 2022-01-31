@@ -14,27 +14,31 @@ p {
     background: #414141;
     border-radius: 0 0 3em 3em;
 }
+
 .categories {
     height: auto;
     width: auto;
     display: grid;
-    grid-template-columns: repeat(20,1fr);
+    grid-template-columns: repeat(20, 1fr);
     overflow: auto;
     margin-left: 1em;
     margin-right: 1em;
     margin-top: 1em;
     align-items: center;
 }
+
 .categories > p {
     margin: 0.25em;
     width: auto;
     height: auto;
     padding: 0.5em 2em 0.5em 2em;
 }
+
 .categories > p:hover {
     background: #404040;
     border-radius: 1em;
 }
+
 #active2 {
     background: #404040;
     border-radius: 1em;
@@ -44,19 +48,21 @@ p {
     height: auto;
     width: auto;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1em;
     overflow: auto;
     margin: 1em;
 }
+
 #add {
     width: auto;
     height: auto;
     padding: 0.5em 4em 0.5em 4em;
 }
+
 #add:hover {
     background: #121212;
-    border-radius:1em;
+    border-radius: 1em;
 }
 
 #stylization {
@@ -80,6 +86,7 @@ p {
     flex-direction: column;
     justify-content: space-around;
 }
+
 #random-stylization {
     display: flex;
     flex-direction: row;
@@ -89,6 +96,7 @@ p {
     background: #121212;
     margin-bottom: 2em;
 }
+
 #random-stylization > img {
     height: 15em;
     width: 15em;
