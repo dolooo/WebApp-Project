@@ -7,13 +7,16 @@ class User
     private $name;
     private $surname;
     private $phone;
+    private $permissions;
 
-    public function __construct(string $email, string $password, string $name, string $surname)
+    public function __construct(string $email, string $password, string $name, string $surname, string $phone, string $permissions)
     {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
+        $this->phone = $phone;
+        $this->permissions = $permissions;
     }
 
     public function getEmail(): string
@@ -64,5 +67,15 @@ class User
     public function setPhone($phone): void
     {
         $this->phone = $phone;
+    }
+
+    public function getPermissions()
+    {
+        return $this->permissions;
+    }
+
+    public function setPermissions($permissions): void
+    {
+        $this->permissions = $permissions;
     }
 }

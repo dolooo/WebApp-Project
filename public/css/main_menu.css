@@ -125,9 +125,8 @@ header nav ul li a:hover {
     color: white;
 }
 
-.allNotes {
-    overflow: auto;
-    height: auto;
+#addEvent {
+    margin-bottom: 1em;
 }
 
 .content {
@@ -156,39 +155,6 @@ button:hover {
     border-radius: 1em;
 }
 
-#note {
-    margin: 0 0.5em 0 0.5em;
-    border-radius: 1em;
-}
-
-#note > p {
-    margin-bottom: 0.5em;
-    background: #121212;
-    border-radius: 1em 0 0 1em;
-    overflow: auto;
-    height: 4em;
-    width: 100%;
-}
-
-.addNote {
-    margin-top: 0.5em;
-}
-
-.textarea {
-    background: #121212;
-    border-radius: 1em;
-    text-align: center;
-    color: white;
-}
-
-.addNote > button {
-    margin: 0;
-}
-
-.addNote > button:hover {
-    Background: #404040;
-    border-radius: 1em;
-}
 
 @media only screen and (max-device-width: 420px) {
     .container {
