@@ -99,7 +99,7 @@
                         </div>
                     </label>
                     <textarea rows="5" type="text" name="opis" placeholder="Opis"></textarea>
-                    <input type="submit" name="add" placeholder="Prześlij">
+                    <input id="add" type="submit" name="add" placeholder="Prześlij">
                 </form>
             </div>
     </div>

@@ -14,7 +14,6 @@
         <?php include('clipboard.php') ?>
         <div class="content">
 
-
         </div>
 </div>
 <div class="footer"></div>

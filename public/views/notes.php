@@ -22,7 +22,7 @@
                 <?php endforeach; ?>
             </div>
             <p>Dodaj nową notatkę</p>
-            <div id="numberOfCharacters"></div>
+            <div id="numberOfCharacters">0/500</div>
             <form class="add-note" action="addNote" method="post" enctype="multipart/form-data">
                 <textarea rows="5" type="text" name="text" placeholder="Nowa notatka"></textarea>
                 <input id="add" type="submit" name="add" placeholder="Dodaj">

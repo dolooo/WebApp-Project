@@ -19,10 +19,10 @@ class DefaultController extends AppController {
         $this->render('addStylization');
     }
     public function addSuitcase() {
-        $this->render('addStylization');
+        $this->render('addSuitcase');
     }
     public function addEvent() {
-        $this->render('addStylization');
+        $this->render('addEvent');
     }
     public function suitcases() {
         $this->render('suitcases');

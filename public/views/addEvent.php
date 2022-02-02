@@ -13,7 +13,21 @@
     <div class="container2">
         <?php include('clipboard.php') ?>
         <div class="content">
-
+            <form class="add-event" action="addEvent" method="post" enctype="multipart/form-data">
+                <?php if (isset($messages)) {
+                    foreach ($messages as $message) {
+                        echo $message;
+                    }
+                }
+                ?>
+                <h4>Miejsce/Opis:</h4>
+                <input type="text" name="place" placeholder="Miejsce/Opis">
+                <h4>Początek:</h4>
+                <input type="date" name="date_start">
+                <h4>Koniec:</h4>
+                <input type="date" name="date_end" >
+                <input id="add" type="submit" name="add" placeholder="Prześlij">
+            </form>
 </div>
 <div class="footer"></div>
 </body>

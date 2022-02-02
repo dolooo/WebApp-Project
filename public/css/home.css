@@ -122,6 +122,24 @@ p {
     object-fit: cover;
     border-radius: 1em;
 }
+.events {
+    height: 9em;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1em;
+    overflow: hidden;
+    margin: 1em;
+}
+#event {
+    background: #121212;
+    border-radius: 1em;
+    width: 9em;
+    height: 9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 
 @media only screen and (max-device-width: 420px) {

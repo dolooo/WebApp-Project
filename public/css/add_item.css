@@ -10,7 +10,8 @@
 .add-item input {
     width: 15%;
     height: 2em;
-    background: white;
+    background: #121212;
+    color: white;
     text-align: start;
     font-size: 1em;
     border: #404040FF solid 1px;
@@ -21,7 +22,8 @@
 .add-item textarea {
     width: 20%;
     height: 3em;
-    background: white;
+    background: #121212;
+    color: white;
     text-align: start;
     font-size: 1em;
     border: #404040FF solid 1px;
@@ -88,6 +90,22 @@
     padding: 1em;
     margin: 1em;
     width: 50%;
+}
+
+#add {
+    color: #ff9100;
+    margin-top: 1em;
+    width: 12em;
+    height: auto;
+    padding: 0.5em 4em 0.5em 4em;
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
+
+#add:hover {
+    color: black;
+    background: #ff9100;
+    border-radius: 1em;
 }
 
 @media only screen and (max-device-width: 420px) {

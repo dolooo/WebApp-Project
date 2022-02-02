@@ -43,14 +43,16 @@
                     </div>
                     <?php endforeach;?>
             </div>
-            <p>Wydarzenia</p>
+            <p>Nadchodzące wydarzenia</p>
             <div class="events">
-                <p id="item">Tajlandia 27.01.2022</p>
+            <?php foreach (array_reverse($events) as $event): ?>
+                <div id="event">
+                    <p><?=$event->getPlace();?></p>
+                    <p>Od: <?=$event->getStartDate();?></p>
+                    <p>Do: <?=$event->getEndDate();?></p>
+                </div>
+                <?php endforeach; ?>
             </div>
-            <!--            <p>Ulubione sklepy i marki</p>-->
-            <!--            <div class="favourite-shops">-->
-            <!--                <p id="item">NIKE</p>-->
-            <!--            </div>-->
         </div>
     </div>
 </div>

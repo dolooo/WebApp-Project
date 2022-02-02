@@ -1,0 +1,46 @@
+.add-event {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: auto;
+    margin: 1em;
+}
+
+.add-event > input {
+    width: 15%;
+    height: 2em;
+    background: #121212;
+    color: white;
+    text-align: start;
+    font-size: 1em;
+    border: #404040FF solid 1px;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+}
+
+#add {
+    color: #ff9100;
+    margin-top: 1em;
+    width: 12em;
+    height: auto;
+    padding: 0.5em 4em 0.5em 4em;
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
+
+#add:hover {
+    color: black;
+    background: #ff9100;
+    border-radius: 1em;
+}
+
+h4 {
+    text-align: start;
+    font-family: Arial, serif;
+    margin: 0.25em;
+}
+
+@media only screen and (max-device-width: 420px) {
+
+}

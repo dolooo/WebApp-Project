@@ -64,7 +64,7 @@
                     </div>
                     <?php endforeach; ?>
                 </label>
-                <input type="submit" name="add" placeholder="Prześlij">
+                <input id="add" type="submit" name="add" placeholder="Prześlij">
             </form>
         </div>
 </div>

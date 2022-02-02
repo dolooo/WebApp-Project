@@ -3,6 +3,8 @@
 require_once 'Repository.php';
 require_once __DIR__ . '/../models/Item.php';
 require_once __DIR__ . '/../models/Stylization.php';
+require_once __DIR__ . '/../models/Event.php';
+require_once __DIR__ . '/../models/Suitcase.php';
 
 class ItemRepository extends Repository
 {
@@ -206,7 +208,7 @@ class ItemRepository extends Repository
 
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM items WHERE (LOWER(category) LIKE :search 
-            OR LOWER(brand) LIKE :search OR LOWER(description) LIKE :search) AND id_assigned_by = :id');
+            OR LOWER(brand) LIKE :search OR LOWER(description) LIKE :search OR LOWER(color) LIKE :search) AND id_assigned_by = :id');
         $stmt->bindParam(':search', $searchString);
         $stmt->bindParam(':id', $_SESSION["userId"], PDO::PARAM_INT);
         $stmt->execute();
@@ -233,6 +235,47 @@ class ItemRepository extends Repository
 
             return array_reverse($stmt->fetchAll(PDO::FETCH_ASSOC));
         }
+    }
+
+    public function addEvent(Event $event)
+    {
+        session_start();
+
+        $statement = $this->database->connect()->prepare('
+            INSERT INTO events (place, date_start, date_end, id_assigned_by)
+            VALUES (?, ?, ?, ?)');
+
+        $statement->execute([
+            $event->getPlace(),
+            $event->getStartDate(),
+            $event->getEndDate(),
+            $_SESSION["userId"]
+        ]);
+    }
+
+
+    public function getEvents(): array
+    {
+        session_start();
+
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('SELECT * FROM events WHERE id_assigned_by = :id ');
+        $stmt->bindParam(':id', $_SESSION["userId"], PDO::PARAM_INT);
+        $stmt->execute();
+        $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        sort($events);
+
+        foreach ($events as $event) {
+            if ($event['id_assigned_by'] == $_SESSION["userId"]) {
+                $result[] = new Event(
+                    $event['place'],
+                    $event['date_start'],
+                    $event['date_end']
+                );
+            }
+        }
+        return $result;
     }
 
 }

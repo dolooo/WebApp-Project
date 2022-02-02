@@ -10,7 +10,7 @@ Routing::get('home', 'ItemController');
 Routing::post('addItem', 'ItemController');
 Routing::get('addStylization', 'ItemController');
 Routing::get('addSuitcase', 'DefaultController');
-Routing::get('addEvent', 'DefaultController');
+Routing::get('addEvent', 'ItemController');
 Routing::get('suitcases', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 Routing::get('stylizations', 'ItemController');
