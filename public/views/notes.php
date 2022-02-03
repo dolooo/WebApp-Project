@@ -30,5 +30,5 @@
         </div>
     </div>
 </div>
-<div class="footer"></div>
+<?php include('footer.php') ?>
 </body>

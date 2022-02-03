@@ -21,58 +21,82 @@ class ItemController extends AppController
 
     public function wardrobe()
     {
-        $items = $this->itemRepository->getItems();
-        $this->render('wardrobe', ['items' => $items]);
+        session_start();
+        if ($_SESSION['zalogowany'] == 0) {
+            $this->render('login');
+        } else {
+            $items = $this->itemRepository->getItems();
+            $this->render('wardrobe', ['items' => $items]);
+        }
+
     }
 
     public function stylizations()
     {
-        $topItems = $this->itemRepository->getItemsByType("gora");
-        $bottomItems = $this->itemRepository->getItemsByType("dol");
-        $footwear = $this->itemRepository->getItemsByType("obuwie");
-        $accessories = $this->itemRepository->getItemsByType("akcesoria");
-        $stylizations = $this->itemRepository->getStylizations();
+        session_start();
+        if ($_SESSION['zalogowany'] == 0) {
+            $this->render('login');
+        } else {
+            $topItems = $this->itemRepository->getItemsByType("gora");
+            $bottomItems = $this->itemRepository->getItemsByType("dol");
+            $footwear = $this->itemRepository->getItemsByType("obuwie");
+            $accessories = $this->itemRepository->getItemsByType("akcesoria");
+            $stylizations = $this->itemRepository->getStylizations();
 
-        $this->render('stylizations', ['stylizations' => $stylizations, 'topItems' => $topItems,
-            'bottomItems' => $bottomItems, 'footwear' => $footwear, 'accessories' => $accessories]);
+            $this->render('stylizations', ['stylizations' => $stylizations, 'topItems' => $topItems,
+                'bottomItems' => $bottomItems, 'footwear' => $footwear, 'accessories' => $accessories]);
+        }
     }
 
     public function home()
     {
-        $items = $this->itemRepository->getItems();
-        $stylizations = $this->itemRepository->getStylizations();
-        $this->render('home', [
-            'items' => $this->itemRepository->getItems(),
-            'stylizations' => $stylizations,
-            'events' => $this->itemRepository->getEvents()
-        ]);
-    }
-
-    public function addEvent()
-    {
-        $items = $this->itemRepository->getItems();
-        $stylizations = $this->itemRepository->getStylizations();
-        if ($this->isPost()) {
-            $event = new Event($_POST['place'], $_POST['date_start'], $_POST['date_end']);
-            $this->itemRepository->addEvent($event);
-            return $this->render('home', [
-                'messages' => $this->message,
+        session_start();
+        if ($_SESSION['zalogowany'] == 0) {
+            $this->render('login');
+        } else {
+            $items = $this->itemRepository->getItems();
+            $stylizations = $this->itemRepository->getStylizations();
+            $this->render('home', [
                 'items' => $this->itemRepository->getItems(),
                 'stylizations' => $stylizations,
                 'events' => $this->itemRepository->getEvents()
             ]);
         }
+    }
+
+    public function addEvent()
+    {
+        session_start();
+        if ($_SESSION['zalogowany'] == 0) {
+            $this->render('login');
+        } else {
+            $items = $this->itemRepository->getItems();
+            $stylizations = $this->itemRepository->getStylizations();
+            if ($this->isPost()) {
+                $event = new Event($_POST['place'], $_POST['date_start'], $_POST['date_end']);
+                $this->itemRepository->addEvent($event);
+                return $this->render('home', [
+                    'messages' => $this->message,
+                    'items' => $this->itemRepository->getItems(),
+                    'stylizations' => $stylizations,
+                    'events' => $this->itemRepository->getEvents()
+                ]);
+            }
             $this->render('addEvent', ['messages' => $this->messages]);
+        }
     }
 
     public function addSuitcase()
     {
+        //TODO adding suitcase
+    }
 
-        }
-
-        public
-        function addStylization()
-        {
+    public function addStylization()
+    {
+        session_start();
+        if ($_SESSION['zalogowany'] == 0) {
+            $this->render('login');
+        } else {
             $topItems = $this->itemRepository->getItemsByType("gora");
             $bottomItems = $this->itemRepository->getItemsByType("dol");
             $footwear = $this->itemRepository->getItemsByType("obuwie");
@@ -99,10 +123,14 @@ class ItemController extends AppController
             $this->render('addStylization', ['topItems' => $topItems, 'bottomItems' => $bottomItems,
                 'footwear' => $footwear, 'accessories' => $accessories]);
         }
+    }
 
-        public
-        function addItem()
-        {
+    public function addItem()
+    {
+        session_start();
+        if ($_SESSION['zalogowany'] == 0) {
+            $this->render('login');
+        } else {
             if ($this->isPost() && is_uploaded_file($_FILES['zdjecie']['tmp_name']) && $this->validate($_FILES['zdjecie'])) {
                 move_uploaded_file(
                     $_FILES['zdjecie']['tmp_name'],
@@ -120,69 +148,70 @@ class ItemController extends AppController
             }
             return $this->render('addItem', ['messages' => $this->messages]);
         }
+    }
 
-        private
-        function validate(array $zdjecie): bool
-        {
-            if ($zdjecie['size'] > self::MAX_FILE_SIZE) {
-                $this->messages[] = 'Plik jest za duży';
-                return false;
-            }
-            if (!isset($zdjecie['type']) && !in_array($zdjecie['type'], self::SUPPORTED_TYPES)) {
-                $this->messages[] = 'Typ pliku nie jest obsługiwany';
-                return false;
-            }
-            return true;
+    private
+    function validate(array $zdjecie): bool
+    {
+        if ($zdjecie['size'] > self::MAX_FILE_SIZE) {
+            $this->messages[] = 'Plik jest za duży';
+            return false;
         }
-
-        public
-        function search()
-        {
-
-            $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
-
-            if ($contentType === "application/json") {
-                $content = trim(file_get_contents("php://input"));
-                $decoded = json_decode($content, true);
-
-                header('Content-type: application/json');
-                http_response_code(200);
-
-                echo json_encode($this->itemRepository->getItemsBySearchString($decoded['search']));
-            }
+        if (!isset($zdjecie['type']) && !in_array($zdjecie['type'], self::SUPPORTED_TYPES)) {
+            $this->messages[] = 'Typ pliku nie jest obsługiwany';
+            return false;
         }
+        return true;
+    }
 
-        public
-        function filter()
-        {
+    public
+    function search()
+    {
 
-            $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
-            if ($contentType === "application/json") {
-                $content = trim(file_get_contents("php://input"));
-                $decoded = json_decode($content, true);
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
 
-                header('Content-type: application/json');
-                http_response_code(200);
+            header('Content-type: application/json');
+            http_response_code(200);
 
-                echo json_encode($this->itemRepository->getItemsByCategory($decoded['filter']));
-            }
-        }
-
-        public
-        function delete()
-        {
-
-            $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
-
-            if ($contentType === "application/json") {
-                $content = trim(file_get_contents("php://input"));
-                $decoded = json_decode($content, true);
-
-                header('Content-type: application/json');
-                http_response_code(200);
-
-                echo json_encode($this->itemRepository->deleteItem($decoded['item']));
-            }
+            echo json_encode($this->itemRepository->getItemsBySearchString($decoded['search']));
         }
     }
+
+    public
+    function filter()
+    {
+
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->itemRepository->getItemsByCategory($decoded['filter']));
+        }
+    }
+
+    public
+    function delete()
+    {
+
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->itemRepository->deleteItem($decoded['item']));
+        }
+    }
+}

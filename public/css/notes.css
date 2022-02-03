@@ -20,10 +20,13 @@ form > input {
     padding: 0.5em 4em 0.5em 4em;
     border-radius: 1em;
     margin-bottom: 1em;
+    color: #ff9100;
+    background: #121212;
 }
 
 #add:hover {
     background: #ff9100;
+    color: black;
     border-radius: 1em;
 }
 .content {

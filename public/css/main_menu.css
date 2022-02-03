@@ -31,19 +31,39 @@ body {
     flex-direction: column;
     border-bottom: #404040 solid 4px;
 }
-
+header > .trademark {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#circle > img {
+    margin-top: 1.2em;
+    height: 2.5em;
+}
+header > .trademark > h1 {
+    margin: 0.3em 0 0 0;
+    font-weight: normal;
+    font-family: "Lithos Pro Regular";
+    font-size: 2em;
+    color: #ff9100;
+}
 header {
+    background: linear-gradient(#121212 0%, #202124 80%);
     width: 100%;
     overflow: hidden;
 }
-
-header h1 {
-    margin: 0;
+#circle {
+    margin-top: 0.2em;
+    width: 5em;
+    height: 5em;
+    background: linear-gradient(#464646 0%, #121212 50%, black 100%);
+    border-radius: 50%;
 }
 
 header h1 a {
-    font-size: 1.8em;
-    color: #ffffff;
+    font-size: 1.5em;
+    color: #ff9100;
     text-decoration: none;
 }
 
@@ -94,7 +114,7 @@ header nav ul li a:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0.5em 0 0 0;
+    margin: 0;
     border-bottom: #404040 solid 4px;
     padding: 0 1em;
 }
@@ -146,8 +166,24 @@ header nav ul li a:hover {
 }
 
 .footer {
-    height: 5em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding:1em;
+    height: 6em;
     Background: #000000;
+}
+.trademark , .contact, .aboutUs, .help{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.footer > div > h5, h4{
+    margin: 0;
+}
+.trademark > img {
+    height:4em;
 }
 
 button {

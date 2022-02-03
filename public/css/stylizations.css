@@ -3,18 +3,6 @@ p {
     margin: 0.25em;
 }
 
-.add-stylization {
-    height: auto;
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    overflow: auto;
-    background: #414141;
-    border-radius: 0 0 3em 3em;
-}
-
 .categories {
     height: auto;
     width: auto;
@@ -69,13 +57,14 @@ p {
     width: 15em;
     background: #121212;
     margin-bottom: 2em;
+    border-radius: 1em;
 }
 
 .stylizations > div > img {
     height: 15em;
     width: 15em;
     object-fit: cover;
-    border-radius: 1em 1em 0 0;
+    border-radius: 1em;
 }
 
 .stylizations > div > div {

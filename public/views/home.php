@@ -43,7 +43,7 @@
                     </div>
                     <?php endforeach;?>
             </div>
-            <p>Nadchodzące wydarzenia</p>
+            <p>Najbliższe wydarzenia</p>
             <div class="events">
             <?php foreach (array_reverse($events) as $event): ?>
                 <div id="event">
@@ -56,5 +56,5 @@
         </div>
     </div>
 </div>
-<div class="footer"></div>
+<?php include('footer.php') ?>
 </body>

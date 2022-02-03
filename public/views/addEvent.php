@@ -25,9 +25,11 @@
                 <h4>Początek:</h4>
                 <input type="date" name="date_start">
                 <h4>Koniec:</h4>
-                <input type="date" name="date_end" >
+                <input type="date" name="date_end">
                 <input id="add" type="submit" name="add" placeholder="Prześlij">
             </form>
+        </div>
+    </div>
 </div>
-<div class="footer"></div>
+<?php include('footer.php') ?>
 </body>

@@ -1,7 +1,7 @@
 .container {
     width: 100vw;
     height: 100vh;
-    background: #202124;
+    background: linear-gradient(#121212 0%, #202124 80%);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -24,15 +24,16 @@
 .title {
     text-align: center;
     font-size: 5em;
-    color: white;
     margin-top: 0.4em;
+    font-weight: normal;
+    font-family: "Lithos Pro Regular";
+    color: #ff9100;
 }
 
 .subtitle {
     text-align: center;
     font-size: 2em;
     color: white;
-    margin-top: 0.4em;
 }
 
 p {
@@ -77,12 +78,13 @@ button {
     border-radius: 19px;
     width: 12em;
     border: none;
-    color: white;
+    color: #ff9100;
     Margin: 0.5em;
     line-height: 2.5em;
 }
 
 button:hover {
+    color: black;
     background: orange;
 }
 
