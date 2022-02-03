@@ -1,3 +1,8 @@
+// const categories = document.querySelectorAll("#category");
+// const category = document.getElementById("file").innerText;
+//
+// categories.forEach(button => button.addEventListener("click", filter));
+
 function filter(category) {
     const data = {filter : category};
     fetch("/filter", {
@@ -9,7 +14,7 @@ function filter(category) {
     }).then(function (response) {
         return response.json();
     }).then(function (items) {
-        itemsContainer.innerHTML = "";
+        itemsContainer2.innerHTML = "";
         loadItems(items)
     });
 }
@@ -33,5 +38,5 @@ function createItem(item) {
     detail2.innerHTML = item.size;
     description.innerHTML = item.description;
 
-    itemsContainer.appendChild(clone);
+    itemsContainer2.appendChild(clone);
 }

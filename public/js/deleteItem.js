@@ -1,12 +1,11 @@
 const deleteButtons = document.querySelectorAll(".fa-trash-alt");
-const itemsContainer = document.querySelector(".items");
-const item = document.getElementById("file").title;
+const itemToDelete = document.getElementById("file").title;
 
 deleteButtons.forEach(button => button.addEventListener("click", deleteItem));
 
 function deleteItem() {
     if (confirm('Usunięcie tej rzeczy spowoduje usunięcie powiązanych z nią stylizacji. Czy chcesz kontynuować?')) {
-        const data = {item : item};
+        const data = {item : itemToDelete};
         fetch("/delete", {
             method: "POST",
             headers: {

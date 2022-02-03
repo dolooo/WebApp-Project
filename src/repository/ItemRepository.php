@@ -268,4 +268,43 @@ class ItemRepository extends Repository
             $arr[4]
         ]);
     }
+
+    public function editItem($file, $category, $brand, $size, $description)
+    {
+        session_start();
+
+        if (!$category == null) {
+            $stmt = $this->database->connect()->prepare('UPDATE items SET category = :category WHERE file = :file 
+            AND id_assigned_by = :id ');
+            $stmt->bindParam(':category', $category);
+            $stmt->bindParam(':file', $file);
+            $stmt->bindParam(':id', $_SESSION["userId"], PDO::PARAM_INT);
+            $stmt->execute();
+        }
+        if (!$brand == null) {
+            $stmt = $this->database->connect()->prepare('UPDATE items SET brand = :brand WHERE file = :file 
+            AND id_assigned_by = :id ');
+            $stmt->bindParam(':brand', $brand);
+            $stmt->bindParam(':file', $file);
+            $stmt->bindParam(':id', $_SESSION["userId"], PDO::PARAM_INT);
+            $stmt->execute();
+        }
+        if (!$size == null) {
+            $stmt = $this->database->connect()->prepare('UPDATE items SET size = :size WHERE file = :file 
+            AND id_assigned_by = :id ');
+            $stmt->bindParam(':size', $size);
+            $stmt->bindParam(':file', $file);
+            $stmt->bindParam(':id', $_SESSION["userId"], PDO::PARAM_INT);
+            $stmt->execute();
+        }
+        if (!$description == null) {
+            $stmt = $this->database->connect()->prepare('UPDATE items SET description = :description WHERE file = :file 
+            AND id_assigned_by = :id ');
+            $stmt->bindParam(':description', $description);
+            $stmt->bindParam(':file', $file);
+            $stmt->bindParam(':id', $_SESSION["userId"], PDO::PARAM_INT);
+            $stmt->execute();
+        }
+
+    }
 }

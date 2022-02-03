@@ -20,6 +20,7 @@ Routing::post('login', 'SecurityController');
 Routing::post('search', 'ItemController');
 Routing::post('filter', 'ItemController');
 Routing::post('delete', 'ItemController');
+Routing::post('edit', 'ItemController');
 Routing::post('notes', 'NoteController');
 Routing::post('addNote', 'NoteController');
 

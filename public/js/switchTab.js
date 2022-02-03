@@ -7,7 +7,7 @@ function switchTab(tab) {
     }).then(function (response) {
         return response.json();
     }).then(function (items) {
-        itemsContainer.innerHTML = "";
+        itemsContainer2.innerHTML = "";
         loadItems(items)
     });
 }

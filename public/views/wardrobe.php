@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/main_menu.css">
     <script type="text/javascript" src="/public/js/search.js" defer></script>
     <script type="text/javascript" src="/public/js/deleteItem.js" defer></script>
+    <script type="text/javascript" src="/public/js/editItem.js" defer></script>
     <script type="text/javascript" src="/public/js/filter.js" defer></script>
     <script src="https://kit.fontawesome.com/fe5f9ac612.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
