@@ -9,20 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <h1><a href="home">Wieszak</a></h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="home">Start</a></li>
-                <li><a href="wardrobe">Szafa</a></li>
-                <li><a href="stylizations">Stylizacje</a></li>
-                <li><a href="suitcases">Walizki</a></li>
-                <li id="last">
-                    <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <?php include('header.php') ?>
     <div class="container2">
         <?php include('clipboard.php') ?>
         <div class="content">
@@ -33,16 +20,24 @@
                     }
                 }
                 ?>
-                <p>Wybierz górną część garderoby:</p>
+                <h4>Wybierz kolekcję do której chcesz przypisać stylizację:</h4>
+                <input list="collections" id="collection" type="text" name="collection" placeholder="Kolekcja">
+                <datalist id="collections">
+                    <option>Codzienne</option>
+                    <option>Praca</option>
+                    <option>Wieczorowe</option>
+                    <option>Vintage</option>
+                </datalist>
+                <h4>Wybierz górną część garderoby:</h4>
                 <label class="items">
                     <?php foreach (array_reverse($topItems) as $item):?>
                     <div id="item">
                         <img src="/public/uploads/<?= $item->getFile(); ?>">
-                        <input type="radio" name="up" value="<?= $item->getFile(); ?>">
+                        <input type="radio" name="top" value="<?= $item->getFile(); ?>">
                     </div>
                     <?php endforeach; ?>
                 </label>
-                <p>Wybierz dolną część garderoby:</p>
+                <h4>Wybierz dolną część garderoby:</h4>
                 <label class="items">
                     <?php foreach (array_reverse($bottomItems) as $item):?>
                     <div id="item">
@@ -51,7 +46,7 @@
                     </div>
                     <?php endforeach; ?>
                 </label>
-                <p>Wybierz obuwie:</p>
+                <h4>Wybierz obuwie:</h4>
                 <label class="items">
                     <?php foreach (array_reverse($footwear) as $item):?>
                     <div id="item">
@@ -60,18 +55,19 @@
                     </div>
                     <?php endforeach; ?>
                 </label>
-                <p>Wybierz dodatki:</p>
+                <h4>Wybierz dodatki:</h4>
                 <label class="items">
                     <?php foreach (array_reverse($accessories) as $item):?>
                     <div id="item">
                             <img src="/public/uploads/<?= $item->getFile(); ?>">
-                        <input type="radio" name="accessories" value="<?= $item->getFile(); ?>">
+                        <input type="radio" name="accesories" value="<?= $item->getFile(); ?>">
                     </div>
                     <?php endforeach; ?>
                 </label>
-                <input type="submit" name="add" placeholder="Prześlij">
+                <input id="add" type="submit" name="add" placeholder="Prześlij">
             </form>
         </div>
 </div>
-<div class="footer"></div>
+</div>
+    <?php include('footer.php') ?>
 </body>

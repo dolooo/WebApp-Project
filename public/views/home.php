@@ -9,32 +9,11 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <h1><a href="home">Wieszak</a></h1>
-        <nav>
-            <ul class="nav-list">
-                <li id="active"><a href="home">Start</a></li>
-                <li><a href="wardrobe">Szafa</a></li>
-                <li><a href="stylizations">Stylizacje</a></li>
-                <li><a href="suitcases">Walizki</a></li>
-                <li id="last">
-                    <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
-                </li>
-                <!--                        <select name="Ustawienia">-->
-                <!--                            <option>Konto</option>-->
-                <!--                            <option>Powiadomienia</option>-->
-                <!--                            <option>Ustawienia</option>-->
-                <!--                            <option>Wyloguj się</option>-->
-                <!--                        </select>-->
-
-                <!--                    <li><a href="community"><i class="far fa-bell"></i></a></li>-->
-            </ul>
-        </nav>
-    </header>
+    <?php include('header.php') ?>
     <div class="container2">
         <?php include('clipboard.php') ?>
         <div class="content">
-            <p>Ostatnio dodane</p>
+            <p>Ostatnio dodane rzeczy</p>
             <div class="items">
                 <?php foreach (array_reverse($items) as $item):?>
                     <div id="project">
@@ -42,21 +21,40 @@
                     </div>
                 <?php endforeach; ?>
             </div>
-            <p>Kolekcje</p>
+            <p>Ostatnio dodane stylizacje</p>
             <div class="collections">
-                <p id="item">Casual</p>
-                <p id="item">Beach</p>
+                    <?php foreach (array_reverse($stylizations) as $stylization): ?>
+                    <div class="stylization">
+                        <div id="stylization">
+                            <img src="/public/<?php if(is_null($stylization->getUp())) {
+                                echo 'img/top.jpg';
+                            } else echo "uploads/".$stylization->getUp(); ?> ">
+                            <img src="/public/<?php if(is_null($stylization->getBottom())) {
+                                echo 'img/bottom.jpg';
+                            } else echo "uploads/".$stylization->getBottom(); ?> ">
+                            <img src="/public/<?php if(is_null($stylization->getFootwear())) {
+                                echo 'img/footwear.jpg';
+                            } else echo "uploads/".$stylization->getFootwear(); ?> ">
+                            <img src="/public/<?php if(is_null($stylization->getAccessories())) {
+                                echo 'img/accesories.jpg';
+                            } else echo "uploads/".$stylization->getAccessories(); ?> ">
+                        </div>
+                        <p><?= $stylization->getCollection(); ?></p>
+                    </div>
+                    <?php endforeach;?>
             </div>
-            <p>Wydarzenia</p>
+            <p>Najbliższe wydarzenia</p>
             <div class="events">
-                <p id="item">Tajlandia 27.01.2022</p>
+            <?php foreach (array_reverse($events) as $event): ?>
+                <div id="event">
+                    <p><?=$event->getPlace();?></p>
+                    <p>Od: <?=$event->getStartDate();?></p>
+                    <p>Do: <?=$event->getEndDate();?></p>
+                </div>
+                <?php endforeach; ?>
             </div>
-            <!--            <p>Ulubione sklepy i marki</p>-->
-            <!--            <div class="favourite-shops">-->
-            <!--                <p id="item">NIKE</p>-->
-            <!--            </div>-->
         </div>
     </div>
 </div>
-<div class="footer"></div>
+<?php include('footer.php') ?>
 </body>

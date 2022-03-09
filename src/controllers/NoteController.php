@@ -15,10 +15,10 @@ class NoteController extends AppController
         $this->noteRepository = new NoteRepository();
     }
 
-    public function home()
+    public function notes()
     {
         $notes = $this->noteRepository->getNotes();
-        $this->render('home', ['notes' => $notes]);
+        $this->render('notes', ['notes' => $notes]);
     }
 
     public function addNote(){
@@ -26,7 +26,7 @@ class NoteController extends AppController
             $note = new Note($_POST['text']);
             $this->noteRepository->addNote($note);
 
-            return $this->render('home', [
+            return $this->render('notes', [
                 'messages' => $this->message,
                 'notes' => $this->noteRepository->getNotes()
             ]);

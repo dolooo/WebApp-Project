@@ -9,20 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <h1><a href="home">Wieszak</a></h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="home">Start</a></li>
-                <li><a href="wardrobe">Szafa</a></li>
-                <li><a href="stylizations">Stylizacje</a></li>
-                <li><a href="suitcases">Walizki</a></li>
-                <li id="last">
-                    <a href="settings">Konto<img class="avatar" src="/public/img/Nope,_Wojnarze,_nope..jpg"></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <?php include('header.php') ?>
     <div class="container2">
         <?php include('clipboard.php') ?>
         <div class="content">
@@ -35,9 +22,8 @@
                     ?>
                     <input list="categories" id="category" type="text" name="kategoria" placeholder="Kategoria">
                     <datalist id="categories">
-                        <option value="">Wybierz kategorię</option>
-                        <option value="Swetry i kardigany"></option>
-                        <option value="Kurtki i płaszcze"></option>
+                        <option>Swetry i kardigany</option>
+                        <option>Kurtki i płaszcze</option>
                         <option>Koszule</option>
                         <option>Spodnie</option>
                         <option>Bluzy</option>
@@ -113,10 +99,10 @@
                         </div>
                     </label>
                     <textarea rows="5" type="text" name="opis" placeholder="Opis"></textarea>
-                    <input type="submit" name="add" placeholder="Prześlij">
+                    <input id="add" type="submit" name="add" placeholder="Prześlij">
                 </form>
             </div>
     </div>
 </div>
-<div class="footer"></div>
+<?php include('footer.php') ?>
 </body>

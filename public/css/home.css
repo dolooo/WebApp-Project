@@ -11,21 +11,12 @@
     background-color: #414141;
     border-radius: 30px;
 }
+
 .recently-added::-webkit-scrollbar-corner {
     background-color: #121212;
 }
 
 .recently-added {
-    border-bottom: #414141 solid 2px;
-    height: auto;
-    width: auto;
-    display: grid;
-    grid-auto-flow: column;
-    overflow: auto;
-    margin-left: 1em;
-}
-
-.collections {
     border-bottom: #414141 solid 2px;
     height: auto;
     width: auto;
@@ -48,15 +39,17 @@
 p {
     margin: 0.25em;
 }
+
 .items {
     height: 9em;
     width: auto;
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1em;
     overflow: hidden;
     margin: 1em;
 }
+
 .items > div > img {
     width: 9em;
     height: 9em;
@@ -72,6 +65,7 @@ p {
     flex-direction: column;
     justify-content: space-around;
 }
+
 .items > div {
     background: #121212;
     border-radius: 1em;
@@ -81,6 +75,7 @@ p {
     flex-direction: column;
     justify-content: space-between;
 }
+
 #item {
     width: 9em;
     height: 9em;
@@ -88,8 +83,67 @@ p {
     margin: 0 1em 0 0;
 }
 
+#stylization {
+    display: grid;
+    grid-template: auto 1fr / auto 1fr;
+    height: 12em;
+    background: #121212;
+    border-radius: 1em;
+}
+
+.collection {
+    display: flex;
+    flex-direction: row;
+}
+
+.stylization {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background: #121212;
+    width: 12em;
+    border-radius: 1em;
+    margin-right: 4em;
+}
+
+.collections {
+    height: 12em;
+    width: auto;
+    margin: 1em;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.collections > div > div > img {
+    height: 6em;
+    width: 6em;
+    object-fit: cover;
+    border-radius: 1em;
+}
+.events {
+    height: 9em;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1em;
+    overflow: hidden;
+    margin: 1em;
+}
+#event {
+    background: #121212;
+    border-radius: 1em;
+    width: 9em;
+    height: 9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
 @media only screen and (max-device-width: 420px) {
-    .recently-added, .collections, .events, .favourite-shops{
+    .recently-added, .collections, .events, .favourite-shops {
         width: 90%;
         height: 30vh;
     }

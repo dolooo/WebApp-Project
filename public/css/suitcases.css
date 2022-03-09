@@ -18,19 +18,21 @@ p {
     height: auto;
     width: auto;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1em;
     overflow: auto;
     margin: 1em;
 }
+
 #add {
     width: auto;
     height: auto;
     padding: 0.5em 4em 0.5em 4em;
 }
+
 #add:hover {
     background: #121212;
-    border-radius:1em;
+    border-radius: 1em;
 }
 
 #item {

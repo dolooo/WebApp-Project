@@ -1,5 +1,5 @@
 const search = document.querySelector('input[name="searchbar"]');
-const projectContainer = document.querySelector(".items");
+const itemContainer = document.querySelector(".items");
 
 search.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
@@ -16,7 +16,7 @@ search.addEventListener("keyup", function (event) {
         }).then(function (response) {
             return response.json();
         }).then(function (items) {
-            projectContainer.innerHTML = "";
+            itemContainer.innerHTML = "";
             loadItems(items)
         });
     }
@@ -36,11 +36,10 @@ function createItem(item) {
     const detail1 = clone.querySelector("#detail1");
     const detail2 = clone.querySelector("#detail2");
     const description = clone.querySelector("#description");
-    image.src = `/public/uploads/${item.image}`;
+    image.src = `/public/uploads/${item.file}`;
     detail1.innerHTML = item.brand;
     detail2.innerHTML = item.size;
     description.innerHTML = item.description;
 
-
-    projectContainer.appendChild(clone);
+    itemContainer.appendChild(clone);
 }

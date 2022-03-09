@@ -1,0 +1,74 @@
+p {
+    margin: 0.25em;
+}
+
+form > input {
+    width: 15%;
+    height: 2em;
+    background: white;
+    text-align: start;
+    font-size: 1em;
+    border: #404040FF solid 1px;
+    border-radius: 0.5em;
+    margin-top: 1em;
+}
+
+#add {
+    margin-top: 1em;
+    width: 12em;
+    height: auto;
+    padding: 0.5em 4em 0.5em 4em;
+    border-radius: 1em;
+    margin-bottom: 1em;
+    color: #ff9100;
+    background: #121212;
+}
+
+#add:hover {
+    background: #ff9100;
+    color: black;
+    border-radius: 1em;
+}
+.content {
+    overflow: auto;
+}
+
+#note {
+    margin: 1em;
+    border-radius: 1em;
+}
+
+#note > p {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    background: #121212;
+    border-radius: 1em;
+    overflow: auto;
+    height: auto;
+    width: 50%;
+}
+
+.add-note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+}
+.add-note > textarea {
+    width: 50%;
+    height:auto;
+    background: #121212;
+    color: white;
+}
+
+.no-valid {
+    border: 4px solid red;
+    color: red;
+}
+#numberOfCharacters {
+    font-style: italic;
+    font-size: 0.8em;
+}
+@media only screen and (max-device-width: 420px) {
+
+}
