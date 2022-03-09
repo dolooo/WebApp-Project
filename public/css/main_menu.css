@@ -1,26 +1,29 @@
-body::-webkit-scrollbar {
+body::-webkit-scrollbar
+{
     width: 0.8em;
     height: 0.8em;
 }
-
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track
+{
     background-color: #121212;
 }
-
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb
+{
     background-color: #414141;
     border-radius: 30px;
 }
-body::-webkit-scrollbar-corner {
+body::-webkit-scrollbar-corner
+{
     background-color: #121212;
 }
-
-body {
+body
+{
     text-align: center;
     margin: 0 auto;
-}
 
-.container{
+}
+.container
+{
     height: auto;
     background: #202124;
     display: flex;
@@ -29,53 +32,32 @@ body {
     flex-direction: column;
     border-bottom: #404040 solid 4px;
 }
-
-header{
+header
+{
     width: 100%;
     overflow: hidden;
 }
-
-header h1 {
+header h1
+{
     margin:0;
 }
-
-.fa-search {
-    background: #404040FF;
-    color: #ffffff;
-    padding: 0.5em;
-    font-size: 1em;
-}
-header h1 a {
+header h1 a
+{
     font-size: 1.8em;
     color: #ffffff;
+    text-decoration: none;
 }
-
-.searchbar {
-    display: flex;
-    justify-content: center;
-    margin-right: 1em;
-}
-.fas {
-    border-radius: 0 0.5em 0.5em 0;
-}
-header input{
-    width: 20%;
-    height: 2em;
-    background: white;
-    text-align: start;
-    font-size: 1em;
-    border: #404040FF solid 1px;
-    border-radius: 0.5em 0 0 0.5em;
-}
-
-header nav {
+header nav
+{
     width: 100%;
 }
-header nav ul {
+header nav ul
+{
     list-style: none;
     color: white;
 }
-header nav ul li a {
+header nav ul li a
+{
     text-decoration: none;
     color: white;
     display: flex;
@@ -84,31 +66,31 @@ header nav ul li a {
     width: 10vw;
     height: 3em;
 }
-
-header nav ul li a:hover {
+header nav ul li a:hover
+{
     background: #404040;
     border-radius: 2em 2em 0 0;
 }
-
-#active {
+#active
+{
     background-color: #414141;
     border-radius: 2em 2em 0 0;
 }
-
-.avatar {
+.avatar
+{
     height: 2em;
     width: 2em;
     border-radius: 50%;
     border: 2px solid #121212;
     margin-left: 0.5em;
 }
-
-.logo {
+.logo
+{
     margin-top: 0.5em;
     height: 3em;
 }
-
-.nav-list {
+.nav-list
+{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -117,10 +99,8 @@ header nav ul li a:hover {
     border-bottom: #404040 solid 4px;
     padding: 0 1em;
 }
-
-
-
-.container2{
+.container2
+{
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -128,37 +108,41 @@ header nav ul li a:hover {
     overflow: visible;
     justify-content: center;
 }
-
-.quick-access{
+.quick-access
+{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 15%;
     height: 100vh;
     overflow: visible;
-    border-right: #404040 solid 2px;
+    border-right: #404040 solid 4px;
 }
-
-.clipboard{
-    background: #414141;
+.clipboard
+{
+    /*background: #414141;*/
     border-radius: 1em;
     width: 12em;
-    height: 20em;
+
     color: white;
 }
-
-
-.content{
+.allNotes
+{
+    overflow: auto;
+    height: auto;
+}
+.content
+{
     width: 85%;
     background: #202124;
 }
-
-.footer{
+.footer
+{
     height: 5em;
     Background: #000000;
 }
-
-button{
+button
+{
     background: none;
     border: none;
     width: 12em;
@@ -167,11 +151,46 @@ button{
     line-height: 2.5em;
     font-size: 1em;
 }
-button:hover{
+button:hover
+{
     Background: #404040;
     border-radius: 1em;
 }
+#note
+{
+    margin: 0 0.5em 0 0.5em;
+    border-radius: 1em;
+}
+#note > p
+{
+    margin-bottom: 0.5em;
+    background: #121212;
+    border-radius: 1em 0 0 1em;
+    overflow: auto;
+    height: 4em;
+    width: 100%;
+}
+.addNote
+{
+    margin-top: 0.5em;
+}
+.textarea
+{
+    background: #121212;
+    border-radius: 1em;
+    text-align: center;
+    color: white;
+}
+.addNote > button
+{
+    margin: 0;
+}
 
+.addNote > button:hover
+{
+    Background: #404040;
+    border-radius: 1em;
+}
 @media only screen and (max-device-width: 420px) {
     .container {
         flex-direction: column;

@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/register.css">
+    <script defer type="text/javascript" src="public/js/validation.js"></script>
     <link rel="shortcut icon" href="public/img/logo2.svg">
     <meta charset="utf-8">
     <title>Zarejestruj się</title>

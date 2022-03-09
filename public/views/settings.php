@@ -11,10 +11,6 @@
 <div class="container">
     <header>
         <h1><a href="home">Wieszak</a></h1>
-        <div class="searchbar">
-            <input name="email" type="text" placeholder="Czego szukasz?">
-            <i class="fas fa-search"></i>
-        </div>
         <nav>
             <ul class="nav-list">
                 <li><a href="home">Start</a></li>
@@ -35,16 +31,21 @@
                     <li><a href="settings" id="clicked">Edytuj profil</a> </li>
                     <li><a href="settings">Ustawienia</a> </li>
 
-                    <li><a href="settings">Wyloguj się
-                            <?php
-                            session_start();
-                            unset($_SESSION["userId"]);
-                            $_SESSION["zalogowany"] = 0;
-                            session_destroy();
-                            $url = "http://$_SERVER[HTTP_HOST]";
-                            header("Location: {$url}/login");
-                            ?>
-                        </a></li>
+                    <li onclick="myFunction()"><p>Wyloguj się
+                            <script>
+                                function myFunction() {
+
+                                    <?php
+                                    session_start();
+                                    unset($_SESSION["userId"]);
+                                    $_SESSION["zalogowany"] = 0;
+                                    session_destroy();
+                                    $url = "http://$_SERVER[HTTP_HOST]";
+                                    header("Location: {$url}/login");
+                                    ?>
+                                }
+                            </script>
+                        </p></li>
                 </ul>
             </div>
         </div>

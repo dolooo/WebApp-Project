@@ -106,6 +106,12 @@ p{
     margin-bottom: 0.5em;
 }
 
+.no-valid {
+    border: 2px solid red;
+    color: red;
+    box-shadow: 0 0 0.2em red;
+}
+
 @media only screen and (max-device-width: 420px) {
     .container {
         flex-direction: column;

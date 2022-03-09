@@ -11,10 +11,6 @@
 <div class="container">
     <header>
         <h1><a href="home">Wieszak</a></h1>
-        <div class="searchbar">
-            <input name="email" type="text" placeholder="Czego szukasz?">
-            <i class="fas fa-search"></i>
-        </div>
         <nav>
             <ul class="nav-list">
                 <li id="active"><a href="home">Start</a></li>

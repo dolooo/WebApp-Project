@@ -1,16 +1,9 @@
 <!DOCTYPE html>
 <div class="quick-access">
     <div class="quick-add">
-        <a href="addItem">
-            <button>+Dodaj nową rzecz</button>
-        </a>
-        <button>+Stwórz walizkę</button>
-        <button>+Stwórz stylizację</button>
-        <button>+Stwórz wydarzenie</button>
-        <button>+Dodaj notatkę</button>
-    </div>
-    <div class="clipboard">
-        <p>notatka1</p>
-        <p>notatka2</p>
+        <a href="addItem"><button>+Dodaj nową rzecz</button></a>
+        <a href="addStylization"><button>+Dodaj stylizację</button></a>
+        <a href="addSuitcase"><button>+Dodaj walizkę</button></a>
+        <a href="addEvent"><button>+Dodaj wydarzenie</button></a>
     </div>
 </div>
