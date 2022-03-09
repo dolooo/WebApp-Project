@@ -39,15 +39,12 @@
         <?php include('clipboard.php') ?>
         <div class="content">
             <p>Ostatnio dodane</p>
-            <div class="recently-added">
-                <p id="item">Rzecz 1</p>
-                <p id="item">Rzecz 2</p>
-                <p id="item">Rzecz 3</p>
-                <p id="item">Rzecz 4</p>
-                <p id="item">Rzecz 5</p>
-                <p id="item">Rzecz 6</p>
-                <p id="item">Rzecz 7</p>
-                <p id="item">Rzecz 8</p>
+            <div class="items">
+                <?php foreach (array_reverse($items) as $item):?>
+                    <div id="project">
+                        <img src="/public/uploads/<?= $item->getFile(); ?>">
+                    </div>
+                <?php endforeach; ?>
             </div>
             <p>Kolekcje</p>
             <div class="collections">

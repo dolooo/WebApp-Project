@@ -3,21 +3,19 @@
 class Item
 {
     private $category;
-    private $color;
+    private $file;
     private $brand;
     private $size;
-    private $tags;
-    private $file;
+    private $color;
     private $description;
 
-    public function __construct($category, $color, $brand, $size, $tags, $file, $description)
+    public function __construct($category, $file ,$brand, $size, $color, $description)
     {
         $this->category = $category;
-        $this->color = $color;
+        $this->file = $file;
         $this->brand = $brand;
         $this->size = $size;
-        $this->tags = $tags;
-        $this->file = $file;
+        $this->color = $color;
         $this->description = $description;
     }
 
@@ -60,16 +58,6 @@ class Item
     public function setSize($size)
     {
         $this->size = $size;
-    }
-
-    public function getTags()
-    {
-        return $this->tags;
-    }
-
-    public function setTags($tags)
-    {
-        $this->tags = $tags;
     }
 
     public function getFile()

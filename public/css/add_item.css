@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 100%;
+    align-items: start;
+    width: auto;
+    margin-left: 1em;
 }
 
 .add-item input {
@@ -27,6 +28,18 @@
     border-radius: 0.5em;
     margin-top: 1em;
 }
+
+.categories {
+    height: auto;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    overflow: auto;
+    margin-left: 1em;
+    margin-right: 1em;
+    align-items: center;
+}
+
 #file {
     padding: 1em;
     background: none;

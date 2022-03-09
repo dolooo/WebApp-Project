@@ -82,10 +82,40 @@ p {
 
 }
 
-#item {
-    width: 15em;
+.items > div > img {
     height: 15em;
+    width: 15em;
+    object-fit: cover;
+    border-radius: 1em 1em 0 0;
+}
+
+.items > div > div {
+    height: 50%;
+    margin: 1em;
+    color: #2699FB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.items > div {
     background: #121212;
+    border-radius: 1em 1em 0 0;
+    height: auto;
+    width: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 @media only screen and (max-device-width: 420px) {
