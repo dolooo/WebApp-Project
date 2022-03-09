@@ -34,7 +34,17 @@
                 <ul class="options">
                     <li><a href="settings" id="clicked">Edytuj profil</a> </li>
                     <li><a href="settings">Ustawienia</a> </li>
-                    <li><a href="settings">Wyloguj się</a></li>
+
+                    <li><a href="settings">Wyloguj się
+                            <?php
+                            session_start();
+                            unset($_SESSION["userId"]);
+                            $_SESSION["zalogowany"] = 0;
+                            session_destroy();
+                            $url = "http://$_SERVER[HTTP_HOST]";
+                            header("Location: {$url}/login");
+                            ?>
+                        </a></li>
                 </ul>
             </div>
         </div>

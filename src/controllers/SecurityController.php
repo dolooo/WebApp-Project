@@ -20,6 +20,8 @@ class SecurityController extends AppController
             return $this->render('login');
         }
 
+        session_start();
+
         $email = $_POST['email'];
         $password = md5($_POST['password']);
         $user = $this->userRepository->getUser($email);
@@ -34,6 +36,7 @@ class SecurityController extends AppController
         if ($user->getPassword() !== $password) {
             return $this->render('login', ['messages' => ['Nieprawidłowe hasło']]);
         }
+
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/home");
     }
